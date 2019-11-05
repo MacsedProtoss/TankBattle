@@ -9,10 +9,7 @@ import java.nio.*;
 
 import static org.lwjgl.glfw.Callbacks.*;
 import static org.lwjgl.glfw.GLFW.*;
-import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL15.*;
-import static org.lwjgl.opengl.GL20.*;
-import static org.lwjgl.opengl.GL30.*;
+import static org.lwjgl.opengl.GL33.*;
 import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
@@ -26,10 +23,8 @@ public class TriAngle {
     private long window;
     final int WIDTH = 800;
     final int HEIGHT = 600;
-    int vao;
-    int vbo;
+    int vao,vbo,ebo;
     String vertexSource , fragmentSource;
-    int fragmentShader,vertexShader;
     int shaderProgram;
 
 // Shaders
@@ -62,7 +57,8 @@ public class TriAngle {
             throw new IllegalStateException("Unable to initialize GLFW");
 
         // Configure GLFW
-        glfwDefaultWindowHints(); // optional, the current window hints are already the default
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR,3);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR,3);
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE); // the window will stay hidden after creation
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // the window will be resizable
 
@@ -76,6 +72,8 @@ public class TriAngle {
             if ( key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE )
                 glfwSetWindowShouldClose(window, true); // We will detect this in the rendering loop
         });
+
+
 
         // Get the thread stack and push a new frame
         try ( MemoryStack stack = stackPush() ) {
@@ -103,64 +101,80 @@ public class TriAngle {
 
         // Make the window visible
         glfwShowWindow(window);
+
+
+
+
     }
 
-    private void initVBO(){
+    private void initObjects(){
 
         try (MemoryStack stack = MemoryStack.stackPush()) {
-            FloatBuffer vertices = stack.mallocFloat(3 * 6);
-            vertices.put(-0.6f).put(-0.4f).put(0f).put(1f).put(0f).put(0f);
-            vertices.put(0.6f).put(-0.4f).put(0f).put(0f).put(1f).put(0f);
-            vertices.put(0f).put(0.6f).put(0f).put(0f).put(0f).put(1f);
+            FloatBuffer vertices = stack.mallocFloat(4*3);
+            vertices.put(0.5f).put(0.5f).put(0f);
+            vertices.put(0.5f).put(-0.5f).put(0f);
+            vertices.put(-0.5f).put(-0.5f).put(0f);
+            vertices.put(-0.5f).put(0.5f).put(0f);
             vertices.flip();
 
+            IntBuffer indices = stack.mallocInt(2*3);
+            indices.put(0).put(1).put(3);
+            indices.put(1).put(2).put(3);
+            indices.flip();
+
+            vao = glGenVertexArrays();
             vbo = glGenBuffers();
+            ebo = glGenBuffers();
+
+            glBindVertexArray(vao);
+
             glBindBuffer(GL_ARRAY_BUFFER, vbo);
             glBufferData(GL_ARRAY_BUFFER, vertices, GL_STATIC_DRAW);
+
+            glBindBuffer(GL_ARRAY_BUFFER,ebo);
+            glBufferData(GL_ARRAY_BUFFER,indices,GL_STATIC_DRAW);
+
+            int floatSize = 4;
+            int positionAttrib = glGetAttribLocation(shaderProgram,"position");
+            glVertexAttribPointer(positionAttrib,3,GL_FLOAT,false,3*floatSize,0);
+
+            glEnableVertexAttribArray(0);
+
+            glBindBuffer(GL_ARRAY_BUFFER,0);
+
+            glBindVertexArray(0);
+
+            System.out.println("init Object finished");
+
         }
 
     }
 
 
 
-    private void initVAO(){
-        vao = glGenVertexArrays();
-        glBindVertexArray(vao);
-    }
+
 
     private void initSource(){
-        vertexSource = "#version 150 core\n"+
-        "in vec3 position;\n"+
-        "in vec3 color;\n"+
+        vertexSource = "#version 330 core\n"+
+        "layout (location = 0) in vec3 position;\n"+
+        "void main()\n"+
+        "{\n"+
+        "gl_Position = vec4(position.x, position.y, position.z, 1.0);\n"+
+        "}\0";
 
-        "out vec3 vertexColor;\n"+
-
-        "uniform mat4 model;\n"+
-        "uniform mat4 view;\n"+
-        "uniform mat4 projection;\n"+
-
-        "void main() {\n"+
-            "vertexColor = color;\n"+
-            "mat4 mvp = projection * view * model;\n"+
-            "gl_Position = mvp * vec4(position, 1.0);\n"+
-        "}";
-
-        fragmentSource =
-
-        "#version 150 core\n"+
-
-        "in vec3 vertexColor;\n"+
-
-        "out vec4 fragColor;\n"+
-
-        "void main() {\n"+
-            "fragColor = vec4(vertexColor, 1.0);\n"+
-        "}";
+        fragmentSource ="#version 330 core\n"+
+        "out vec4 color;\n"+
+        "void main()\n"+
+        "{\n"+
+        "color = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"+
+        "}\n\0";
 
 
     }
 
     private void initShader(){
+        int fragmentShader,vertexShader;
+
         vertexShader = glCreateShader(GL_VERTEX_SHADER);
         glShaderSource(vertexShader, vertexSource);
         glCompileShader(vertexShader);
@@ -185,6 +199,8 @@ public class TriAngle {
         glBindFragDataLocation(shaderProgram, 0, "fragColor");
         glLinkProgram(shaderProgram);
 
+        glDeleteShader(vertexShader);
+        glDeleteShader(fragmentShader);
 
         status = glGetProgrami(shaderProgram, GL_LINK_STATUS);
         if (status != GL_TRUE) {
@@ -200,20 +216,37 @@ public class TriAngle {
         // bindings available for use.
         GL.createCapabilities();
 
+        initSource();
+        initShader();
+        initObjects();
+
         // Set the clear color
-        glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+        glClearColor(0.2f, 0.3f, 0.3f, 0.0f);
 
         // Run the rendering loop until the user has attempted to close
         // the window or has pressed the ESCAPE key.
         while ( !glfwWindowShouldClose(window) ) {
+            glfwPollEvents();
+
+            glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
 
+            glUseProgram(shaderProgram);
+            glBindVertexArray(vao);
+            //glDrawArrays(GL_TRIANGLES,0,6);
+            glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
+            glBindVertexArray(0);
             glfwSwapBuffers(window); // swap the color buffers
 
             // Poll for window events. The key callback above will only be
             // invoked during this call.
-            glfwPollEvents();
+
         }
+
+        glDeleteVertexArrays(vao);
+        glDeleteBuffers(vbo);
+        glDeleteBuffers(ebo);
+
     }
 
 
