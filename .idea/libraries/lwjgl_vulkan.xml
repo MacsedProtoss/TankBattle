@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="lwjgl-vulkan">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/External Libraries/lwjgl/lwjgl-vulkan/lwjgl-vulkan-natives-macos.jar!/" />
+      <root url="jar://$PROJECT_DIR$/External Libraries/lwjgl/lwjgl-vulkan/lwjgl-vulkan.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/External Libraries/lwjgl/lwjgl-vulkan/lwjgl-vulkan-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/External Libraries/lwjgl/lwjgl-vulkan/lwjgl-vulkan-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
