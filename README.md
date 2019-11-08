@@ -1,2 +1,2 @@
 # TankBattle
- A Java project for OPP homework
+ A Java project for OOP homework
