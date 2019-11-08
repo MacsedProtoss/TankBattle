@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b197630d-cd66-4b5a-a6ef-b206bcb030b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl_opengles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl_vulkan.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/External Libraries/lwjgl/lwjgl-opengles/khronos_license.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/External Libraries/lwjgl/lwjgl-vulkan/khronos_license.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TankBattle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TankBattle.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/TriAngle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/TriAngle.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,6 +16,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,6 +32,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/External Libraries/lwjgl/lwjgl" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -28,8 +40,8 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -72,6 +84,10 @@
       <updated>1572921390443</updated>
       <workItem from="1572921391654" duration="178000" />
       <workItem from="1572951031072" duration="4385000" />
+      <workItem from="1573112688899" duration="227000" />
+      <workItem from="1573112920023" duration="1250000" />
+      <workItem from="1573126306821" duration="3092000" />
+      <workItem from="1573195296030" duration="5771000" />
     </task>
     <servers />
   </component>
@@ -83,7 +99,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -8,9 +8,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lwjgl" level="project" />
-    <orderEntry type="library" name="lwjgl-opengles" level="project" />
     <orderEntry type="library" name="lwjgl-opengl" level="project" />
     <orderEntry type="library" name="lwjgl-glfw" level="project" />
-    <orderEntry type="library" name="lwjgl-vulkan" level="project" />
   </component>
 </module>

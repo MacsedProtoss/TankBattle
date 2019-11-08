@@ -21,13 +21,14 @@ public class TriAngle {
 
 // Window dimensions
     private long window;
-    final int WIDTH = 800;
-    final int HEIGHT = 600;
-    int vao,vbo,ebo;
-    String vertexSource , fragmentSource;
-    int shaderProgram;
-
+    private final int WIDTH = 800;
+    private final int HEIGHT = 600;
+    private int vao,vbo,ebo;
+    private String vertexSource , fragmentSource;
+    private int shaderProgram;
+    private float Xposition,Yposition;
 // Shaders
+
 
 
     // The MAIN function, from here we start the application and run the game loop
@@ -51,6 +52,9 @@ public class TriAngle {
         // Setup an error callback. The default implementation
         // will print the error message in System.err.
         GLFWErrorCallback.createPrint(System.err).set();
+
+        Xposition = 0f;
+        Yposition = 0f;
 
         // Initialize GLFW. Most GLFW functions will not work before doing this.
         if ( !glfwInit() )
@@ -110,11 +114,11 @@ public class TriAngle {
     private void initObjects(){
 
         try (MemoryStack stack = MemoryStack.stackPush()) {
-            FloatBuffer vertices = stack.mallocFloat(4*3);
-            vertices.put(0.5f).put(0.5f).put(0f);
-            vertices.put(0.5f).put(-0.5f).put(0f);
-            vertices.put(-0.5f).put(-0.5f).put(0f);
-            vertices.put(-0.5f).put(0.5f).put(0f);
+            FloatBuffer vertices = stack.mallocFloat(4*5);
+            vertices.put(0.2f).put(0.2f).put(0f).put(1.0f).put(1.0f);
+            vertices.put(0.2f).put(-0.2f).put(0f).put(1.0f).put(0.0f);
+            vertices.put(-0.2f).put(-0.2f).put(0f).put(0.0f).put(0.0f);
+            vertices.put(-0.2f).put(0.2f).put(0f).put(0.0f).put(1.0f);
             vertices.flip();
 
             IntBuffer indices = stack.mallocInt(2*3);
@@ -131,12 +135,83 @@ public class TriAngle {
             glBindBuffer(GL_ARRAY_BUFFER, vbo);
             glBufferData(GL_ARRAY_BUFFER, vertices, GL_STATIC_DRAW);
 
-            glBindBuffer(GL_ARRAY_BUFFER,ebo);
-            glBufferData(GL_ARRAY_BUFFER,indices,GL_STATIC_DRAW);
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ebo);
+
+            glBufferData(GL_ELEMENT_ARRAY_BUFFER,indices,GL_STATIC_DRAW);
+
 
             int floatSize = 4;
             int positionAttrib = glGetAttribLocation(shaderProgram,"position");
-            glVertexAttribPointer(positionAttrib,3,GL_FLOAT,false,3*floatSize,0);
+            System.out.println(glGetError());
+            glVertexAttribPointer(0,3,GL_FLOAT,false,5*floatSize,0L);
+            System.out.println(glGetError());
+
+            glEnableVertexAttribArray(0);
+            System.out.println(glGetError());
+
+            int textureAttrib = glGetAttribLocation(shaderProgram,"texCoord");
+            System.out.println(glGetError());
+            glVertexAttribPointer(1,2,GL_FLOAT,false,5*floatSize,3*floatSize);
+            System.out.println(glGetError());
+
+
+
+
+
+
+            glEnableVertexAttribArray(1);
+            System.out.println(glGetError());
+
+
+
+            glBindBuffer(GL_ARRAY_BUFFER,0);
+
+            glBindVertexArray(0);
+
+//            System.out.println(glGetError());
+
+//            System.out.println("init Object finished");
+
+        }
+
+    }
+
+    private void refreshObjects(){
+
+        Xposition += 0.001f;
+        Yposition -= 0.001f;
+
+
+        try (MemoryStack stack = MemoryStack.stackPush()) {
+            FloatBuffer vertices = stack.mallocFloat(4*3);
+            vertices.put(0.2f+Xposition).put(0.2f-Yposition).put(0f);
+            vertices.put(0.2f+Xposition).put(-0.2f-Yposition).put(0f);
+            vertices.put(-0.2f+Xposition).put(-0.2f-Yposition).put(0f);
+            vertices.put(-0.2f+Xposition).put(0.2f-Yposition).put(0f);
+            vertices.flip();
+
+            IntBuffer indices = stack.mallocInt(2*3);
+            indices.put(0).put(1).put(3);
+            indices.put(1).put(2).put(3);
+            indices.flip();
+
+            vao = glGenVertexArrays();
+            vbo = glGenBuffers();
+            ebo = glGenBuffers();
+
+            glBindVertexArray(vao);
+
+            glBindBuffer(GL_ARRAY_BUFFER, vbo);
+            glBufferData(GL_ARRAY_BUFFER, vertices, GL_STATIC_DRAW);
+
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ebo);
+            System.out.println(glGetError());
+            glBufferData(GL_ELEMENT_ARRAY_BUFFER,indices,GL_STATIC_DRAW);
+            System.out.println(glGetError());
+
+            int floatSize = 4;
+            int positionAttrib = glGetAttribLocation(shaderProgram,"position");
+            glVertexAttribPointer(positionAttrib,3,GL_FLOAT,false,0,0L);
 
             glEnableVertexAttribArray(0);
 
@@ -144,7 +219,9 @@ public class TriAngle {
 
             glBindVertexArray(0);
 
-            System.out.println("init Object finished");
+//            System.out.println(glGetError());
+
+//            System.out.println("init Object finished");
 
         }
 
@@ -155,21 +232,29 @@ public class TriAngle {
 
 
     private void initSource(){
-        vertexSource = "#version 330 core\n"+
-        "layout (location = 0) in vec3 position;\n"+
-        "void main()\n"+
-        "{\n"+
-        "gl_Position = vec4(position.x, position.y, position.z, 1.0);\n"+
-        "}\0";
+        vertexSource =
+                "#version 330 core\n"+
+                "layout (location = 0) in vec3 position;\n"+
+                "layout (location = 1) in vec2 texCoord;\n"+
+                "out vec2 TexCoord;\n"+
+                "void main()\n"+
+                "{\n"+
+                    "gl_Position = vec4(position.x, position.y, position.z, 1.0);\n"+
+                    "TexCoord = vec2(texCoord.x,texCoord.y);\n"+
+                "}\0";
 
-        fragmentSource ="#version 330 core\n"+
-        "out vec4 color;\n"+
-        "void main()\n"+
-        "{\n"+
-        "color = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"+
-        "}\n\0";
+        fragmentSource =
+                "#version 330 core\n"+
+                "out vec4 color;\n"+
+                "in vec2 TexCoord;\n"+
+                "uniform sampler2D texture1;"+
+                "void main()\n"+
+                "{\n"+
+                    "color = texture(texture1,TexCoord);\n"+
+                "}\n\0";
 
 
+//        System.out.println(glGetError());
     }
 
     private void initShader(){
@@ -196,7 +281,7 @@ public class TriAngle {
         shaderProgram = glCreateProgram();
         glAttachShader(shaderProgram, vertexShader);
         glAttachShader(shaderProgram, fragmentShader);
-        glBindFragDataLocation(shaderProgram, 0, "fragColor");
+        glBindFragDataLocation(shaderProgram, 0, "color");
         glLinkProgram(shaderProgram);
 
         glDeleteShader(vertexShader);
@@ -206,6 +291,7 @@ public class TriAngle {
         if (status != GL_TRUE) {
             throw new RuntimeException(glGetProgramInfoLog(shaderProgram));
         }
+//        System.out.println(glGetError());
     }
 
     private void loop() {
@@ -226,16 +312,31 @@ public class TriAngle {
         // Run the rendering loop until the user has attempted to close
         // the window or has pressed the ESCAPE key.
         while ( !glfwWindowShouldClose(window) ) {
-            glfwPollEvents();
+
+
+
 
             glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
 
             glUseProgram(shaderProgram);
+//            System.out.println(glGetError());
             glBindVertexArray(vao);
-            //glDrawArrays(GL_TRIANGLES,0,6);
+
             glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
+
+//            System.out.println(glGetError());
             glBindVertexArray(0);
+
+//            System.out.println(glGetError());
+
+
+//            refreshObjects();
+
+            glfwPollEvents();
+
+
+
             glfwSwapBuffers(window); // swap the color buffers
 
             // Poll for window events. The key callback above will only be
