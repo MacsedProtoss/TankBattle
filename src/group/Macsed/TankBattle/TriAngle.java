@@ -123,10 +123,10 @@ public class TriAngle {
 
         try (MemoryStack stack = MemoryStack.stackPush()) {
             FloatBuffer vertices = stack.mallocFloat(4*5);
-            vertices.put(0.2f).put(0.2f).put(0f).put(1.0f).put(1.0f);
-            vertices.put(0.2f).put(-0.2f).put(0f).put(1.0f).put(0.0f);
-            vertices.put(-0.2f).put(-0.2f).put(0f).put(0.0f).put(0.0f);
-            vertices.put(-0.2f).put(0.2f).put(0f).put(0.0f).put(1.0f);
+            vertices.put(0.1f).put(0.1f).put(0f).put(1.0f).put(1.0f);
+            vertices.put(0.1f).put(-0.1f).put(0f).put(1.0f).put(0.0f);
+            vertices.put(-0.1f).put(-0.1f).put(0f).put(0.0f).put(0.0f);
+            vertices.put(-0.1f).put(0.1f).put(0f).put(0.0f).put(1.0f);
             vertices.flip();
 
             IntBuffer indices = stack.mallocInt(2*3);
@@ -192,10 +192,10 @@ public class TriAngle {
 
         try (MemoryStack stack = MemoryStack.stackPush()) {
             FloatBuffer vertices = stack.mallocFloat(4*3);
-            vertices.put(0.2f+Xposition).put(0.2f-Yposition).put(0f);
-            vertices.put(0.2f+Xposition).put(-0.2f-Yposition).put(0f);
-            vertices.put(-0.2f+Xposition).put(-0.2f-Yposition).put(0f);
-            vertices.put(-0.2f+Xposition).put(0.2f-Yposition).put(0f);
+            vertices.put(0.1f+Xposition).put(0.1f-Yposition).put(0f);
+            vertices.put(0.1f+Xposition).put(-0.1f-Yposition).put(0f);
+            vertices.put(-0.1f+Xposition).put(-0.1f-Yposition).put(0f);
+            vertices.put(-0.1f+Xposition).put(0.1f-Yposition).put(0f);
             vertices.flip();
 
             IntBuffer indices = stack.mallocInt(2*3);
@@ -314,7 +314,7 @@ public class TriAngle {
         initShader();
         initObjects();
 
-        // Set the clear color
+       // Set the clear color
         glClearColor(0.2f, 0.3f, 0.3f, 0.0f);
 
         // Run the rendering loop until the user has attempted to close
