@@ -14,6 +14,7 @@ import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
 
+
 public class TriAngle {
 
     // Function prototypes
@@ -46,6 +47,7 @@ public class TriAngle {
         // Terminate GLFW and free the error callback
         glfwTerminate();
         glfwSetErrorCallback(null).free();
+
     }
 
     private void init() {
@@ -106,7 +108,13 @@ public class TriAngle {
         // Make the window visible
         glfwShowWindow(window);
 
-
+        glfwSetKeyCallback(window, new GLFWKeyCallback() {
+            @Override
+            public void invoke(long window, int key, int scancode, int action, int mods) {
+                System.out.println(String.valueOf(key));
+                System.out.println(String.valueOf(action));
+            }
+        });
 
 
     }
@@ -331,9 +339,12 @@ public class TriAngle {
 //            System.out.println(glGetError());
 
 
+
+
 //            refreshObjects();
 
             glfwPollEvents();
+
 
 
 
@@ -349,6 +360,7 @@ public class TriAngle {
         glDeleteBuffers(ebo);
 
     }
+
 
 
 

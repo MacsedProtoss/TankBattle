@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b197630d-cd66-4b5a-a6ef-b206bcb030b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl_opengles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl_vulkan.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/External Libraries/lwjgl/lwjgl-opengles/khronos_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/External Libraries/lwjgl/lwjgl-vulkan/khronos_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TankBattle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TankBattle.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/TriAngle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/TriAngle.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,6 +82,9 @@
       <workItem from="1573112920023" duration="1250000" />
       <workItem from="1573126306821" duration="3092000" />
       <workItem from="1573195296030" duration="5771000" />
+      <workItem from="1573215980876" duration="406000" />
+      <workItem from="1574080667821" duration="1586000" />
+      <workItem from="1574135337133" duration="64000" />
     </task>
     <servers />
   </component>
