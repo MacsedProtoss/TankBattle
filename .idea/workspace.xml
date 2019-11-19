@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b197630d-cd66-4b5a-a6ef-b206bcb030b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/TriAngle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/TriAngle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GameBarrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GameBarrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GameBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GameBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GamePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GamePlayer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +42,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -90,7 +92,7 @@
       <workItem from="1573215980876" duration="406000" />
       <workItem from="1574080667821" duration="1586000" />
       <workItem from="1574135337133" duration="64000" />
-      <workItem from="1574161158030" duration="5335000" />
+      <workItem from="1574161158030" duration="6349000" />
     </task>
     <servers />
   </component>
