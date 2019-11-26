@@ -11,11 +11,15 @@ public class GameObject {
     private IntBuffer indices;
     private float positionX;
     private float positionY;
+    private float width;
+    private float height;
     private GameObjectType ObjectType;
 
     protected GameObject(){
         positionX = 0;
         positionY = 0;
+        width = 0;
+        height = 0;
         try (MemoryStack stack = MemoryStack.stackPush()) {
             vertices = stack.mallocFloat(4*3);
             vertices.put(0f).put(0f).put(0f);
@@ -44,6 +48,14 @@ public class GameObject {
         refreshRects();
     }
 
+    public void setWidth(float width) {
+        this.width = width;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
     public void setType(GameObjectType type) {
         this.ObjectType = type;
     }
@@ -64,9 +76,9 @@ public class GameObject {
         try (MemoryStack stack = MemoryStack.stackPush()) {
             vertices = stack.mallocFloat(4*3);
             vertices.put(positionX).put(positionY).put(0f);
-            vertices.put(positionX).put(positionY).put(0f);
-            vertices.put(positionX).put(positionY).put(0f);
-            vertices.put(positionX).put(positionY).put(0f);
+            vertices.put(positionX+width).put(positionY).put(0f);
+            vertices.put(positionX+width).put(positionY+height).put(0f);
+            vertices.put(positionX).put(positionY+height).put(0f);
             vertices.flip();
 
         }
