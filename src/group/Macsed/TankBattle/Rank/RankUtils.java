@@ -1,4 +1,4 @@
-package group.Macsed.TankBattle.rank;
+package group.Macsed.TankBattle.Rank;
 
 import java.io.*;
 import java.util.List;

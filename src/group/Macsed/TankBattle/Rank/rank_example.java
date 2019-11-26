@@ -1,7 +1,7 @@
 package group.Macsed.TankBattle;
 
-import group.Macsed.TankBattle.rank.RankItem;
-import group.Macsed.TankBattle.rank.RankUtils;
+import group.Macsed.TankBattle.Rank.RankItem;
+import group.Macsed.TankBattle.Rank.RankUtils;
 
 import java.io.IOException;
 import java.util.Date;

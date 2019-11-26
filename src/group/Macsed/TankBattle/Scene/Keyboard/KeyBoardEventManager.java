@@ -1,6 +1,6 @@
-package group.Macsed.TankBattle.GameScene.Keyboard;
+package group.Macsed.TankBattle.Scene.Keyboard;
 
-import group.Macsed.TankBattle.GameScene.GameData.GameDataManager;
+import group.Macsed.TankBattle.Scene.GameData.GameDataManager;
 
 public class KeyBoardEventManager {
     private KeyboardActiveKeys key ;

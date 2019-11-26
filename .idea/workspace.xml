@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b197630d-cd66-4b5a-a6ef-b206bcb030b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/Barrier/GameBarrier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/Bullet/GameBullet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/GameMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/Tank/GameTank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GameBarrier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GameBullet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GameDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/GameDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GameMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GameObjectType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/GameObjectType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/GameData/GamePlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/Keyboard/KeyBoardEventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Keyboard/KeyBoardEventManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/Keyboard/KeyboardActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Keyboard/KeyboardActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameScene/Keyboard/KeyboardActiveKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Keyboard/KeyboardActiveKeys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/rank/RankItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Rank/RankItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/rank/RankList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Rank/RankList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/rank/RankUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Rank/RankUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/rank/rank_example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Rank/rank_example.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -89,7 +107,8 @@
       <workItem from="1573215980876" duration="406000" />
       <workItem from="1574080667821" duration="1586000" />
       <workItem from="1574135337133" duration="64000" />
-      <workItem from="1574161158030" duration="6964000" />
+      <workItem from="1574161158030" duration="7043000" />
+      <workItem from="1574764730941" duration="3423000" />
     </task>
     <servers />
   </component>

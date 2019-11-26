@@ -1,4 +1,4 @@
-package group.Macsed.TankBattle.GameScene.Keyboard;
+package group.Macsed.TankBattle.Scene.Keyboard;
 
 public enum KeyboardActions {
     press,touch,touchend

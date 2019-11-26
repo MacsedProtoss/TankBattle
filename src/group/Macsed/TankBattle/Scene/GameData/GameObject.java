@@ -1,4 +1,4 @@
-package group.Macsed.TankBattle.GameScene.GameData;
+package group.Macsed.TankBattle.Scene.GameData;
 
 import org.lwjgl.system.MemoryStack;
 
@@ -11,9 +11,9 @@ public class GameObject {
     private IntBuffer indices;
     private float positionX;
     private float positionY;
-    private GameObjectType type;
+    private GameObjectType ObjectType;
 
-    GameObject(){
+    protected GameObject(){
         positionX = 0;
         positionY = 0;
         try (MemoryStack stack = MemoryStack.stackPush()) {
@@ -45,11 +45,11 @@ public class GameObject {
     }
 
     public void setType(GameObjectType type) {
-        this.type = type;
+        this.ObjectType = type;
     }
 
     public GameObjectType getType() {
-        return type;
+        return ObjectType;
     }
 
     public FloatBuffer getVertices() {
