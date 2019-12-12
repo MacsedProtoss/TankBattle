@@ -1,5 +1,6 @@
-package group.Macsed.TankBattle.Foundation.Graphics;
+package group.Macsed.TankBattle.Foundation.Graphics.Window.base;
 
+import group.Macsed.TankBattle.Foundation.Graphics.Window.GraphicResourcesManager;
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
@@ -29,7 +30,7 @@ public class GraphicWindowController {
     }
 
     public void run() {
-        System.out.println("Hello LWJGL " + Version.getVersion() + "!");
+        System.out.println("Now Loading Basic Window");
 
         init();
         loop();

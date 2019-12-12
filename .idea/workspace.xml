@@ -2,36 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b197630d-cd66-4b5a-a6ef-b206bcb030b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/TankBattle/META-INF/TankBattle.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Audio/AudioFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Audio/AudioFileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Audio/AudioManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Audio/AudioManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Audio/AudioPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Audio/AudioPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Render/base/GraphicEBOGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Render/base/GraphicVAOGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Render/base/GraphicVBOGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicEBOGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicGameViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/GraphicGameViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicRankViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/GraphicRankViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicResourcesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/GraphicResourcesManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicStartViewControllor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/GraphicStartViewControllor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicVAOGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicVBOGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/base/GraphicWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Rank/RankItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Rank/RankItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Rank/RankList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Rank/RankList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Rank/RankUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Rank/RankUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Rank/rank_example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Rank/rank_example.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/Barrier/GameBarrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameData/Barrier/GameBarrier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/Barrier/GameBarrierType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameData/Barrier/GameBarrierType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/Bullet/GameBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameData/Bullet/GameBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/Bullet/GameBulletType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameData/Bullet/GameBulletType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/GameDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameData/GameDataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameData/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameData/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/GameObjectType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameData/GameObjectType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/Tank/GameTank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameData/Tank/GameTank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/GameData/Tank/GameTankType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/GameData/Tank/GameTankType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Graphics/GraphicEBOGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicEBOGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Graphics/GraphicGameViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicGameViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Graphics/GraphicRankViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicRankViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Graphics/GraphicResourcesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicResourcesManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Graphics/GraphicStartViewControllor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicStartViewControllor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Graphics/GraphicVAOGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicVAOGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Graphics/GraphicVBOGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicVBOGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Graphics/GraphicWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Keyboard/KeyBoardEventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Keyboard/KeyBoardEventManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Keyboard/KeyboardActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Keyboard/KeyboardActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Scene/Keyboard/KeyboardActiveKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Keyboard/KeyboardActiveKeys.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +103,7 @@
       <workItem from="1574135337133" duration="64000" />
       <workItem from="1574161158030" duration="7043000" />
       <workItem from="1574764730941" duration="5526000" />
-      <workItem from="1576118704099" duration="271000" />
+      <workItem from="1576118704099" duration="774000" />
     </task>
     <servers />
   </component>
