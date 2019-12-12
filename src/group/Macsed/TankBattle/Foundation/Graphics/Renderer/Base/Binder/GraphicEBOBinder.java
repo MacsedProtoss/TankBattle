@@ -1,4 +1,4 @@
-package group.Macsed.TankBattle.Foundation.Graphics.Renderer.base.binder;
+package group.Macsed.TankBattle.Foundation.Graphics.Renderer.Base.Binder;
 
 import java.nio.IntBuffer;
 

@@ -1,8 +1,5 @@
-package group.Macsed.TankBattle.Foundation.Graphics.Renderer.base.generator;
+package group.Macsed.TankBattle.Foundation.Graphics.Renderer.Base.Generator;
 
-import java.nio.IntBuffer;
-
-import static org.lwjgl.opengl.GL33.*;
 import static org.lwjgl.opengl.GL33.glGenBuffers;
 
 public class GraphicEBOGenerator {

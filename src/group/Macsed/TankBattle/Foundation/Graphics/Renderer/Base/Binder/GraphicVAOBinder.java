@@ -1,4 +1,4 @@
-package group.Macsed.TankBattle.Foundation.Graphics.Renderer.base.binder;
+package group.Macsed.TankBattle.Foundation.Graphics.Renderer.Base.Binder;
 
 import static org.lwjgl.opengl.GL33.glBindVertexArray;
 

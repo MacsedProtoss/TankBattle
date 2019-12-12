@@ -1,4 +1,4 @@
-package group.Macsed.TankBattle.Foundation.Graphics.Renderer.base.generator;
+package group.Macsed.TankBattle.Foundation.Graphics.Renderer.Base.Generator;
 
 import static org.lwjgl.opengl.GL33.*;
 
