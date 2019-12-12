@@ -1,11 +1,13 @@
 package group.Macsed.TankBattle.Foundation.Graphics.Window.base;
 
+import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.Base.GraphicBaseDrawer;
 import group.Macsed.TankBattle.Foundation.Graphics.Window.GraphicResourcesManager;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
 import org.lwjgl.system.*;
 
 import java.nio.*;
+import java.util.Random;
 
 import static org.lwjgl.glfw.Callbacks.*;
 import static org.lwjgl.glfw.GLFW.*;
@@ -47,6 +49,8 @@ public class GraphicWindowController {
     private void init() {
         // Setup an error callback. The default implementation
         // will print the error message in System.err.
+//        Configuration.DEBUG_MEMORY_ALLOCATOR.set(true);
+
         GLFWErrorCallback.createPrint(System.err).set();
 
         // Initialize GLFW. Most GLFW functions will not work before doing this.
@@ -94,7 +98,7 @@ public class GraphicWindowController {
         // Make the OpenGL context current
         glfwMakeContextCurrent(window);
         // Enable v-sync
-        glfwSwapInterval(1);
+        glfwSwapInterval(3);
 
         // Make the window visible
         glfwShowWindow(window);
@@ -106,7 +110,6 @@ public class GraphicWindowController {
                 System.out.println(String.valueOf(action));
             }
         });
-
 
 
     }
@@ -132,6 +135,10 @@ public class GraphicWindowController {
             glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
 
+
+            test();
+
+
             glfwPollEvents();
 
 
@@ -141,6 +148,49 @@ public class GraphicWindowController {
             // invoked during this call.
 
         }
+
+
+    }
+
+    //TODO: this is a draw test & should be removed once test passed
+    private void test(){
+
+
+
+        try (MemoryStack stack = stackPush() ) {
+
+            FloatBuffer vertices;
+            IntBuffer indices;
+
+            Random random = new Random();
+            float i = random.nextFloat()/5.0f;
+
+            vertices = stack.mallocFloat(4 * 5);
+            vertices.put(0.5f+i).put(0.5f+i).put(0f).put(1.0f).put(1.0f);
+            vertices.put(0.5f+i).put(-0.5f+i).put(0f).put(1.0f).put(0.0f);
+            vertices.put(-0.5f+i).put(-0.5f+i).put(0f).put(0.0f).put(0.0f);
+            vertices.put(-0.5f+i).put(0.5f+i).put(0f).put(0.0f).put(1.0f);
+            vertices.flip();
+
+            indices = stack.mallocInt(2 * 3);
+            indices.put(0).put(1).put(3);
+            indices.put(1).put(2).put(3);
+            indices.flip();
+
+
+            String path = "/Volumes/DATA/1.png";
+
+            GraphicBaseDrawer.shared.setIndices(indices);
+            GraphicBaseDrawer.shared.setVertices(vertices);
+            GraphicBaseDrawer.shared.setTexturePath(path);
+            GraphicBaseDrawer.shared.draw();
+
+            
+
+        }
+
+//        memReport();
+
 
 
     }

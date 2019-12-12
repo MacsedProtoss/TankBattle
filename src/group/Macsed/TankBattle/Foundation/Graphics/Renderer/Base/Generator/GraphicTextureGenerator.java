@@ -4,7 +4,7 @@ import static org.lwjgl.opengl.GL33.*;
 
 public class GraphicTextureGenerator {
 
-    public static GraphicTextureGenerator shared;
+    public static GraphicTextureGenerator shared = new GraphicTextureGenerator();
 
     public int generateTexture(){
         int texture = glGenTextures();

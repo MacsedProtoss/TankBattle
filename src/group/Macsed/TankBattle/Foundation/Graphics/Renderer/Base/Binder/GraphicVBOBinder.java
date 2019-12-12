@@ -6,7 +6,7 @@ import static org.lwjgl.opengl.GL33.*;
 
 public class GraphicVBOBinder {
 
-    public static GraphicVBOBinder shared;
+    public static GraphicVBOBinder shared = new GraphicVBOBinder();
 
     public void bindVBO(int vbo, FloatBuffer vertices){
         glBindBuffer(GL_ARRAY_BUFFER, vbo);

@@ -4,7 +4,7 @@ import static org.lwjgl.opengl.GL33.*;
 
 public class GraphicShaderProgram {
 
-    public static GraphicShaderProgram shared;
+    public static GraphicShaderProgram shared = new GraphicShaderProgram();
 
     public int createProgram(int vertexShader,int fragmentShader){
 

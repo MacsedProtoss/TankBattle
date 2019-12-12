@@ -1,13 +1,14 @@
 package group.Macsed.TankBattle.Foundation.Graphics.Renderer.Base.Generator;
 
-import static org.lwjgl.opengl.GL30.glGenVertexArrays;
+import static org.lwjgl.opengl.GL33.*;
 
 public class GraphicVAOGenerator {
 
-    public static GraphicVAOGenerator shared;
+    public static GraphicVAOGenerator shared = new GraphicVAOGenerator();
 
-    public int generateVao(int vaoID){
+    public int generateVao(){
         int vao = glGenVertexArrays();
+
         return vao;
     }
 

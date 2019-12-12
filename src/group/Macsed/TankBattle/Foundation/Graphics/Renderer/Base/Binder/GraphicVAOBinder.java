@@ -4,7 +4,7 @@ import static org.lwjgl.opengl.GL33.glBindVertexArray;
 
 public class GraphicVAOBinder {
 
-    public static GraphicVAOBinder shared;
+    public static GraphicVAOBinder shared = new GraphicVAOBinder();
 
     public void bindVao(int vao){
         glBindVertexArray(vao);

@@ -6,7 +6,7 @@ import static org.lwjgl.opengl.GL33.*;
 
 public class GraphicEBOBinder {
 
-    public static GraphicEBOBinder shared;
+    public static GraphicEBOBinder shared = new GraphicEBOBinder();
 
     public void bindEBO(int ebo,IntBuffer indices){
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ebo);

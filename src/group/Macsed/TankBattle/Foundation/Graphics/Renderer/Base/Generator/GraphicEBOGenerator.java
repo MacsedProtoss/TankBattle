@@ -4,7 +4,7 @@ import static org.lwjgl.opengl.GL33.glGenBuffers;
 
 public class GraphicEBOGenerator {
 
-    public static GraphicEBOGenerator shared;
+    public static GraphicEBOGenerator shared = new GraphicEBOGenerator();
 
     public int generateEBO(){
         int ebo = glGenBuffers();

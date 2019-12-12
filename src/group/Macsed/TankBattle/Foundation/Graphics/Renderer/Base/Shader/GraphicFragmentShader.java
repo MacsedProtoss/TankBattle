@@ -5,7 +5,7 @@ import static org.lwjgl.opengl.GL33.*;
 
 public class GraphicFragmentShader {
 
-    public static GraphicFragmentShader shared;
+    public static GraphicFragmentShader shared = new GraphicFragmentShader();
 
     public int createFragmentShader(String source){
         int shader = glCreateShader(GL_FRAGMENT_SHADER);

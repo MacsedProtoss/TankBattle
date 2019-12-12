@@ -9,7 +9,7 @@ import static org.lwjgl.opengl.GL33.glCreateShader;
 
 public class GraphicVertexShader {
 
-    public static GraphicVertexShader shared;
+    public static GraphicVertexShader shared = new GraphicVertexShader();
 
     public int createShader(String source){
         int shader = glCreateShader(GL_VERTEX_SHADER);

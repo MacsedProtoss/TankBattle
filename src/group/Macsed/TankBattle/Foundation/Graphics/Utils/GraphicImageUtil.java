@@ -7,6 +7,8 @@ import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 
 import static group.Macsed.TankBattle.Foundation.File.FileIOUtil.ioResourceToByteBuffer;
+import static java.lang.Math.round;
+import static org.lwjgl.opengl.GL33.*;
 import static org.lwjgl.stb.STBImage.*;
 import static org.lwjgl.stb.STBImageResize.*;
 import static org.lwjgl.system.MemoryStack.*;
@@ -14,10 +16,12 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class GraphicImageUtil {
 
-    ByteBuffer image;
-    int width;
-    int height;
-    int comp;
+    private ByteBuffer image;
+    private int width;
+    private int height;
+    private int comp;
+    private int format;
+    private String imagePath;
 
     public ByteBuffer getImage() {
         return image;
@@ -35,9 +39,15 @@ public class GraphicImageUtil {
         return comp;
     }
 
-    public GraphicImageUtil(String imagePath) {
+    public int getFormat() {
+        return format;
+    }
 
-        ByteBuffer imageBuffer = ByteBuffer.allocate(0);
+    public static GraphicImageUtil shared = new GraphicImageUtil();
+
+    public void readImage(String imagePath) {
+
+        ByteBuffer imageBuffer = null;
 
         try {
             imageBuffer = ioResourceToByteBuffer(imagePath, 8 * 1024);
@@ -73,9 +83,43 @@ public class GraphicImageUtil {
             this.width = w.get(0);
             this.height = h.get(0);
             this.comp = comp.get(0);
+
         }
 
+//        memFree(imageBuffer);
+//        if (comp == 3) {
+//            if ((width & 3) != 0) {
+//                glPixelStorei(GL_UNPACK_ALIGNMENT, 2 - (width & 1));
+//            }
+//            format = GL_RGB;
+//        } else {
+////            premultiplyAlpha();
+//
+//            glEnable(GL_BLEND);
+//            glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+//
+//            format = GL_RGBA;
+//        }
 
+//        free();
+    }
+
+    private void premultiplyAlpha() {
+        int stride = width * 4;
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                int i = y * stride + x * 4;
+
+                float alpha = (image.get(i + 3) & 0xFF) / 255.0f;
+                image.put(i + 0, (byte)round(((image.get(i + 0) & 0xFF) * alpha)));
+                image.put(i + 1, (byte)round(((image.get(i + 1) & 0xFF) * alpha)));
+                image.put(i + 2, (byte)round(((image.get(i + 2) & 0xFF) * alpha)));
+            }
+        }
+    }
+
+    public void free(){
+        stbi_image_free(image);
     }
 
 }

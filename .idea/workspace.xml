@@ -3,8 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="b197630d-cd66-4b5a-a6ef-b206bcb030b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TankBattle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TankBattle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicCommonValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicCommonValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicEBOBinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicEBOBinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicTextureBinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicTextureBinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicVAOBinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicVAOBinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicVBOBinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicVBOBinder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicEBOGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicEBOGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicTextureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicTextureGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicVAOGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicVAOGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicVBOGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicVBOGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Program/GraphicShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Program/GraphicShaderProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Shader/GraphicFragmentShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Shader/GraphicFragmentShader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Shader/GraphicVertexShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Shader/GraphicVertexShader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Utils/GraphicImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Utils/GraphicImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/base/GraphicWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/base/GraphicWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,17 +44,17 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/External Libraries/lwjgl/lwjgl-stb/lwjgl-stb.jar!/" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/bin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -60,7 +72,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="group.Macsed.TankBattle.Main" />
       <module name="TankBattle" />
-      <option name="VM_PARAMETERS" value="-XstartOnFirstThread" />
+      <option name="VM_PARAMETERS" value="-XstartOnFirstThread -XX:+PrintGC -verbose:gc " />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -95,7 +107,9 @@
       <workItem from="1574161158030" duration="7043000" />
       <workItem from="1574764730941" duration="5526000" />
       <workItem from="1576118704099" duration="6354000" />
-      <workItem from="1576125438416" duration="1259000" />
+      <workItem from="1576125438416" duration="8576000" />
+      <workItem from="1576134477292" duration="245000" />
+      <workItem from="1576134739173" duration="14513000" />
     </task>
     <servers />
   </component>
