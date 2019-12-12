@@ -11,6 +11,4 @@ public class GraphicEBOGenerator {
         return ebo;
     }
 
-
-
 }
