@@ -227,9 +227,7 @@ public class TriAngle {
 
             glBindVertexArray(0);
 
-//            System.out.println(glGetError());
 
-//            System.out.println("init Object finished");
 
         }
 
@@ -299,7 +297,6 @@ public class TriAngle {
         if (status != GL_TRUE) {
             throw new RuntimeException(glGetProgramInfoLog(shaderProgram));
         }
-//        System.out.println(glGetError());
     }
 
     private void loop() {

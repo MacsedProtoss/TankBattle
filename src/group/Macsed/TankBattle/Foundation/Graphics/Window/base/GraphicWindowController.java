@@ -1,7 +1,6 @@
 package group.Macsed.TankBattle.Foundation.Graphics.Window.base;
 
 import group.Macsed.TankBattle.Foundation.Graphics.Window.GraphicResourcesManager;
-import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
 import org.lwjgl.system.*;
@@ -107,6 +106,7 @@ public class GraphicWindowController {
                 System.out.println(String.valueOf(action));
             }
         });
+
 
 
     }
