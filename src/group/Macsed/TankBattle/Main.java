@@ -1,6 +1,6 @@
 package group.Macsed.TankBattle;
 
-import group.Macsed.TankBattle.Scene.Graphics.GraphicWindowController;
+import group.Macsed.TankBattle.Foundation.Graphics.GraphicWindowController;
 
 public class Main {
 
