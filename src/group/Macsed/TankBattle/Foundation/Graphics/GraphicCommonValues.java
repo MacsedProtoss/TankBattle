@@ -40,4 +40,15 @@ public class GraphicCommonValues {
                 "}";
     }
 
+    public float moveSpeed(){
+        return 0.01f;
+    }
+
+    public int ScreenWidth(){
+        return 800;
+    }
+
+    public int ScreenHeight(){
+        return 600;
+    }
 }

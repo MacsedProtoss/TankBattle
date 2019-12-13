@@ -2,6 +2,8 @@ package group.Macsed.TankBattle.Foundation.Graphics.Window.base;
 
 import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.RenderUnitManager;
 import group.Macsed.TankBattle.Foundation.Graphics.Window.GraphicResourcesManager;
+import group.Macsed.TankBattle.Foundation.Keyboard.KeyBoardEventManager;
+import group.Macsed.TankBattle.Foundation.Keyboard.KeyboardActiveKeys;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
 import org.lwjgl.system.*;
@@ -63,14 +65,16 @@ public class GraphicWindowController {
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // the window will be resizable
 
         // Create the window
-        window = glfwCreateWindow(1024, 768, "Learn GLFW!", NULL, NULL);
+        window = glfwCreateWindow(WIDTH, HEIGHT, "Learn GLFW!", NULL, NULL);
         if ( window == NULL )
             throw new RuntimeException("Failed to create the GLFW window");
 
         // Setup a key callback. It will be called every time a key is pressed, repeated or released.
         glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {
-            if ( key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE )
+            if ( key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE ) {
                 glfwSetWindowShouldClose(window, true); // We will detect this in the rendering loop
+            }
+
         });
 
 
@@ -97,7 +101,7 @@ public class GraphicWindowController {
         // Make the OpenGL context current
         glfwMakeContextCurrent(window);
         // Enable v-sync
-        glfwSwapInterval(3);
+        glfwSwapInterval(1);
 
         // Make the window visible
         glfwShowWindow(window);
@@ -105,8 +109,21 @@ public class GraphicWindowController {
         glfwSetKeyCallback(window, new GLFWKeyCallback() {
             @Override
             public void invoke(long window, int key, int scancode, int action, int mods) {
-                System.out.println(String.valueOf(key));
-                System.out.println(String.valueOf(action));
+                if (key == GLFW_KEY_W){
+                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.w);
+                }
+
+                if (key == GLFW_KEY_A){
+                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.a);
+                }
+
+                if (key == GLFW_KEY_S){
+                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.s);
+                }
+
+                if (key == GLFW_KEY_D){
+                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.d);
+                }
             }
         });
 
@@ -136,10 +153,13 @@ public class GraphicWindowController {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
 
 
+
+
             test();
 
 
             glfwPollEvents();
+
 
 
             glfwSwapBuffers(window); // swap the color buffers
@@ -155,7 +175,7 @@ public class GraphicWindowController {
     //TODO: this is a draw test & should be removed once test passed
 
     private  void testInit(){
-        RenderUnitManager.shared.addUnitToList("test","/Volumes/DATA/1.png",0.5f,0.5f,0f,0f);
+        RenderUnitManager.shared.addUnitToList("player","/Volumes/DATA/1.png",400f,300f,0f,0f);
     }
 
     private void test(){

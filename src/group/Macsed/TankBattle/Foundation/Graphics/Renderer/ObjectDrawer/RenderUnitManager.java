@@ -39,7 +39,20 @@ public class RenderUnitManager {
         }
     }
 
+    public RenderUnit getPlayer(){
+        for (RenderUnit unit:units
+        ) {
 
+            if (unit.unitTag == "player"){
+
+                return unit;
+            }
+
+
+        }
+
+        return null;
+    }
 
 
 

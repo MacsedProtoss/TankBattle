@@ -15,6 +15,8 @@ public class RenderUnit {
     public String unitTag;
     private RenderDataUnit data;
 
+
+
     private boolean hasSub = false;
     private RenderDataUnit subData;
 
@@ -26,6 +28,9 @@ public class RenderUnit {
         this.subData = subData;
     }
 
+    public RenderDataUnit getData() {
+        return data;
+    }
 
     public void setHasSub(boolean hasSub) {
         this.hasSub = hasSub;
@@ -39,10 +44,10 @@ public class RenderUnit {
             IntBuffer indices;
 
             vertices = stack.mallocFloat(4 * 5);
-            vertices.put(data.width+data.Xposition).put(data.height+data.Yposition).put(0f).put(1.0f).put(1.0f);
-            vertices.put(data.width+data.Xposition).put(-data.height+data.Yposition).put(0f).put(1.0f).put(0.0f);
-            vertices.put(-data.width+data.Xposition).put(-data.height+data.Yposition).put(0f).put(0.0f).put(0.0f);
-            vertices.put(-data.width+data.Xposition).put(data.height+data.Yposition).put(0f).put(0.0f).put(1.0f);
+            vertices.put(data.width+data.Xposition).put(data.height+data.Yposition).put(0f).put(data.anchors[0]).put(data.anchors[1]);
+            vertices.put(data.width+data.Xposition).put(-data.height+data.Yposition).put(0f).put(data.anchors[2]).put(data.anchors[3]);
+            vertices.put(-data.width+data.Xposition).put(-data.height+data.Yposition).put(0f).put(data.anchors[4]).put(data.anchors[5]);
+            vertices.put(-data.width+data.Xposition).put(data.height+data.Yposition).put(0f).put(data.anchors[6]).put(data.anchors[7]);
             vertices.flip();
 
             indices = stack.mallocInt(2 * 3);

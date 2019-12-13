@@ -1,37 +1,30 @@
 package group.Macsed.TankBattle.Foundation.Keyboard;
 
-import group.Macsed.TankBattle.Model.GameData.GameDataManager;
+import group.Macsed.TankBattle.Foundation.Graphics.Data.RenderDataMoveDirection;
+import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.RenderUnitManager;
+import group.Macsed.TankBattle.Model.GameData.GameDataManager;;
+
 
 public class KeyBoardEventManager {
-    private KeyboardActiveKeys key ;
-    private KeyboardActions action;
-    private GameDataManager dataManager;
 
-    public void setKey(KeyboardActiveKeys key) {
-        this.key = key;
-    }
+    public static KeyBoardEventManager shared = new KeyBoardEventManager();
 
-    public void setAction(KeyboardActions action) {
-        this.action = action;
-    }
-
-    public void setDataManager(GameDataManager dataManager) {
-        this.dataManager = dataManager;
-    }
-
-    public void handleKeyEvent(){
+    public void handleKeyEvent(KeyboardActiveKeys key){
         switch (key){
             case w:
-                //up
+                RenderUnitManager.shared.getPlayer().getData().move(RenderDataMoveDirection.up);
                 break;
             case a:
                 // left
+                RenderUnitManager.shared.getPlayer().getData().move(RenderDataMoveDirection.left);
                 break;
             case d:
                 //right
+                RenderUnitManager.shared.getPlayer().getData().move(RenderDataMoveDirection.right);
                 break;
             case s:
                 //down
+                RenderUnitManager.shared.getPlayer().getData().move(RenderDataMoveDirection.down);
                 break;
             case space:
                 //fire
