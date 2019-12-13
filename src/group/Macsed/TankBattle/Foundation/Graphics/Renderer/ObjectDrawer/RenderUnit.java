@@ -61,7 +61,7 @@ public class RenderUnit {
             GraphicBaseDrawer.shared.setTexturePath(data.path);
             GraphicBaseDrawer.shared.draw();
 
-            System.gc();
+
 
         }
 

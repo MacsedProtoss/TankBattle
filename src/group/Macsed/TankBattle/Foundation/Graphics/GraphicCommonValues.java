@@ -41,7 +41,7 @@ public class GraphicCommonValues {
     }
 
     public float moveSpeed(){
-        return 0.01f;
+        return 0.001f;
     }
 
     public int ScreenWidth(){
