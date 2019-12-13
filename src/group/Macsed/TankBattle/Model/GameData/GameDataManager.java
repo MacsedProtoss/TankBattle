@@ -31,7 +31,7 @@ public class GameDataManager {
         }
 
         for(int i=0;i<3;i++){
-            new GameEnemyTank((i-1)*GraphicCommonValues.shared.CommonObjSize()+36,-100,0,GraphicCommonValues.shared.moveSpeed()*GraphicCommonValues.shared.ScreenWidth(),GraphicCommonValues.shared.enermyHelath(),GraphicCommonValues.shared.enermyDamage());
+            new GameEnemyTank((i-1)*GraphicCommonValues.shared.CommonObjSize()*5,-100,0,GraphicCommonValues.shared.moveSpeed()*GraphicCommonValues.shared.ScreenWidth(),GraphicCommonValues.shared.enermyHelath(),GraphicCommonValues.shared.enermyDamage());
         }
 
 

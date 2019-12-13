@@ -26,7 +26,7 @@ public class GameBullet extends GameBoxColiderObject {
         this.coliderHeight=bulletHeight;
         whetherRigid=false;
 
-        GameMap.theInstance.boxColiderObjectList.add(this);
+//        GameMap.theInstance.boxColiderObjectList.add(this);
 
     }
 

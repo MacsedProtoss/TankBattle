@@ -52,7 +52,7 @@ public class GameMap {
                 if(CheckTwoBoxColider(theCheckedObject,forColiderObject)){
                     theCollisonObjType=forColiderObject.getType();
                     if(theCollisonObjType==GameObjectType.enemyBullet||theCollisonObjType==GameObjectType.playerBullet){
-                        boxColiderObjectList.remove(forColiderObject);
+//                        boxColiderObjectList.remove(forColiderObject);
                     }
                     return theCollisonObjType;
                 }

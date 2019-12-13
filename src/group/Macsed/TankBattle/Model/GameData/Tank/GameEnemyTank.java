@@ -39,7 +39,7 @@ public class GameEnemyTank extends GameTank{
 
 
 
-        if(shootTimer>0f){
+        if(shootTimer>=0f){
             shootTimer-=0.1f;
         }
 
@@ -47,7 +47,7 @@ public class GameEnemyTank extends GameTank{
             direction=90f*((int)(Math.random()*4));
             directionChangeTimer=directionChangePerT;
         }
-        if(directionChangeTimer>0f){
+        if(directionChangeTimer>=0f){
             directionChangeTimer-=0.1f;
         }
 

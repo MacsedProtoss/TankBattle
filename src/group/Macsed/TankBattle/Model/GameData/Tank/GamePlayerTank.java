@@ -54,7 +54,7 @@ public class GamePlayerTank extends GameTank{
         }
 
 
-        if(shootTimer>0f){
+        if(shootTimer>=0f){
             shootTimer-=0.1f;
         }
 

@@ -77,9 +77,9 @@ public class GameTank extends GameBoxColiderObject {
 
 
 
-        GameMap.theInstance.boxColiderObjectList.add(
-                new GameBullet(newPosX,newPosY,direction,
-                        (ObjectType==GameObjectType.player)?GameObjectType.playerBullet:GameObjectType.enemyBullet));
+
+        new GameBullet(newPosX,newPosY,direction,
+                        (ObjectType==GameObjectType.player)?GameObjectType.playerBullet:GameObjectType.enemyBullet);
 
 
 
