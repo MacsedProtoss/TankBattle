@@ -6,7 +6,7 @@ import group.Macsed.TankBattle.Model.GameData.Bullet.GameBullet;
 public class GameTank extends GameBoxColiderObject {
     protected float moveSpeed=0f;
     protected float hP=0;
-    protected final float shootBulletDDistance=40;
+    protected final float shootBulletDDistance=100;
     protected float damage=0;
 
 
@@ -21,6 +21,7 @@ public class GameTank extends GameBoxColiderObject {
 
 
     protected void TankMove(float direction){
+        this.direction = direction;
         float newPosX,newPosY;
         newPosX=positionX;
         newPosY=positionY;

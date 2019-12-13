@@ -10,7 +10,7 @@ public class RenderUnitManager {
 
     public static RenderUnitManager shared = new RenderUnitManager();
 
-    private List<RenderUnit> units = new LinkedList<>();
+    public List<RenderUnit> units = new LinkedList<>();
 
     public void addUnitToList(String tag,String texturePath,float width,float height,float x,float y,RenderUnitType type){
 

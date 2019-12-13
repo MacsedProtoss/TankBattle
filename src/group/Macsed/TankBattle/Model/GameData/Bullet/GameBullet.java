@@ -1,5 +1,6 @@
 package group.Macsed.TankBattle.Model.GameData.Bullet;
 
+import group.Macsed.TankBattle.Foundation.Graphics.GraphicCommonValues;
 import group.Macsed.TankBattle.Model.GameData.GameBoxColiderObject;
 import group.Macsed.TankBattle.Model.GameData.GameMap;
 import group.Macsed.TankBattle.Model.GameData.GameObject;
@@ -8,7 +9,7 @@ import group.Macsed.TankBattle.Model.GameData.GameObjectType;
 public class GameBullet extends GameBoxColiderObject {
     //private float damage=5;
     private static float bulletWidth=4,bulletHeight=4;
-    private static float bulletSpeed=1.2f;
+    private static float bulletSpeed=1.2f/ GraphicCommonValues.shared.ScreenWidth();
 
 
     public GameBullet(float positonX,float positionY,float direction,GameObjectType bulletType){

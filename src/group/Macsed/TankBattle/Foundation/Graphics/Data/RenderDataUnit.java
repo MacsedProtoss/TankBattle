@@ -45,6 +45,55 @@ public class RenderDataUnit {
         anchors[7] = 1f;
     }
 
+    public void changeDirection(RenderDataMoveDirection direction){
+        switch (direction){
+            case up:
+                anchors[0] = 1f;
+                anchors[1] = 0f;
+                anchors[2] = 0f;
+                anchors[3] = 0f;
+                anchors[4] = 0f;
+                anchors[5] = 1f;
+                anchors[6] = 1f;
+                anchors[7] = 1f;
+                break;
+            case down:
+                anchors[0] = 0f;
+                anchors[1] = 1f;
+                anchors[2] = 1f;
+                anchors[3] = 1f;
+                anchors[4] = 1f;
+                anchors[5] = 0f;
+                anchors[6] = 0f;
+                anchors[7] = 0f;
+
+                break;
+            case left:
+                anchors[0] = 0f;
+                anchors[1] = 0f;
+                anchors[2] = 0f;
+                anchors[3] = 1f;
+                anchors[4] = 1f;
+                anchors[5] = 1f;
+                anchors[6] = 1f;
+                anchors[7] = 0f;
+                break;
+            case right:
+                anchors[0] = 1f;
+                anchors[1] = 0f;
+                anchors[2] = 1f;
+                anchors[3] = 1f;
+                anchors[4] = 0f;
+                anchors[5] = 1f;
+                anchors[6] = 0f;
+                anchors[7] = 0f;
+
+
+                break;
+        }
+    }
+
+
     public void move(RenderDataMoveDirection direction){
         switch (direction){
             case up:

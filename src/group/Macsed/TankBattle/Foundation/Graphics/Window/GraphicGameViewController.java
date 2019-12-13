@@ -1,5 +1,6 @@
 package group.Macsed.TankBattle.Foundation.Graphics.Window;
 
+import group.Macsed.TankBattle.Foundation.Graphics.Data.RenderDataMoveDirection;
 import group.Macsed.TankBattle.Foundation.Graphics.GraphicCommonValues;
 import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.Base.RenderUnit;
 import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.Base.RenderUnitManager;
@@ -69,25 +70,38 @@ public class GraphicGameViewController extends GraphicWindowController {
         }
     }
 
+    private RenderDataMoveDirection getDirection(float direction){
+        if (direction == 0f){
+            return RenderDataMoveDirection.right;
+        }else if(direction == 90f){
+            return RenderDataMoveDirection.up;
+        }else if (direction == 180f){
+            return  RenderDataMoveDirection.left;
+        }else{
+            return RenderDataMoveDirection.down;
+        }
+    }
+
     private void refreshList(){
 
         for (GameObject obj: GameMap.theInstance.boxColiderObjectList
         ) {
 
             RenderUnitManager.shared.addUnitToList("normal",getTexturePath(obj.getType()),GraphicCommonValues.shared.CommonObjSize(),GraphicCommonValues.shared.CommonObjSize(),obj.getPositionX()/GraphicCommonValues.shared.ScreenWidth(),obj.getPositionY()/GraphicCommonValues.shared.ScreenHeight(),getTextureType(obj.getType()));
-
+            RenderUnitManager.shared.units.get(RenderUnitManager.shared.units.size() - 1).getData().changeDirection(getDirection(obj.getDirection()));
         }
 
         RenderUnitManager.shared.addUnitToList("player",getTexturePath(GameMap.theInstance.thePlayer.getType()),GraphicCommonValues.shared.CommonObjSize(),GraphicCommonValues.shared.CommonObjSize(),GameMap.theInstance.thePlayer.getPositionX()/GraphicCommonValues.shared.ScreenWidth(),GameMap.theInstance.thePlayer.getPositionY()/GraphicCommonValues.shared.ScreenHeight(),getTextureType(GameMap.theInstance.thePlayer.getType()));
-
+        RenderUnitManager.shared.units.get(RenderUnitManager.shared.units.size() - 1).getData().changeDirection(getDirection(GameMap.theInstance.thePlayer.getDirection()));
 
 
         for (GameObject obj: GameMap.theInstance.noColiderList
         ) {
 
             RenderUnitManager.shared.addUnitToList("mix",getTexturePath(obj.getType()),GraphicCommonValues.shared.CommonObjSize(),GraphicCommonValues.shared.CommonObjSize(),obj.getPositionX()/GraphicCommonValues.shared.ScreenWidth(),obj.getPositionY()/GraphicCommonValues.shared.ScreenHeight(),getTextureType(obj.getType()));
-
+            RenderUnitManager.shared.units.get(RenderUnitManager.shared.units.size() - 1).getData().changeDirection(getDirection(obj.getDirection()));
         }
+
     }
 
     @Override
@@ -101,6 +115,9 @@ public class GraphicGameViewController extends GraphicWindowController {
     @Override
     protected void updateAndDraw() {
 
+
+        manager.Update(null);
+
         RenderUnitManager.shared.clearList();
         refreshList();
 
@@ -112,25 +129,22 @@ public class GraphicGameViewController extends GraphicWindowController {
             glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {
                 if ( key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE ) {
                     glfwSetWindowShouldClose(window, true); // We will detect this in the rendering loop
-                }
-                if (key == GLFW_KEY_W){
+                } else if (key == GLFW_KEY_W){
 //                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.w);
                     manager.Update(KeyboardActiveKeys.w);
-                }
-
-                if (key == GLFW_KEY_A){
+                }else if (key == GLFW_KEY_A){
 //                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.a);
                     manager.Update(KeyboardActiveKeys.a);
-                }
-
-                if (key == GLFW_KEY_S){
+                }else if (key == GLFW_KEY_S){
 //                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.s);
                     manager.Update(KeyboardActiveKeys.s);
-                }
-
-                if (key == GLFW_KEY_D){
+                }else if (key == GLFW_KEY_D){
 //                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.d);
                     manager.Update(KeyboardActiveKeys.d);
+                }else if (key == GLFW_KEY_SPACE){
+                    manager.Update(KeyboardActiveKeys.space);
+                }else{
+
                 }
 
             });

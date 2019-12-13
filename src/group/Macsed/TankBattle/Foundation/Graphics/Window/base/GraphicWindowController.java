@@ -21,6 +21,7 @@ public class GraphicWindowController {
 
     protected long window;
     protected GraphicResourcesManager resourcesManager;
+    protected boolean keypressed;
 
     public GraphicResourcesManager getResourcesManager() {
         return resourcesManager;
@@ -130,12 +131,15 @@ public class GraphicWindowController {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
 
 
+            keypressed = false;
+            glfwPollEvents();
+
 
             updateAndDraw();
 
 
 
-            glfwPollEvents();
+
 
 
 
@@ -174,6 +178,8 @@ public class GraphicWindowController {
             if (key == GLFW_KEY_D){
                 KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.d);
             }
+
+            keypressed = true;
 
         });
     }
