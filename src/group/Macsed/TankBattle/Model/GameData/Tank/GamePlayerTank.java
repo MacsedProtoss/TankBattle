@@ -1,6 +1,7 @@
 package group.Macsed.TankBattle.Model.GameData.Tank;
 
 import group.Macsed.TankBattle.Foundation.Keyboard.KeyboardActiveKeys;
+import group.Macsed.TankBattle.Model.GameData.Colider.CollisionMessage;
 import group.Macsed.TankBattle.Model.GameData.GameBoxColiderObject;
 import group.Macsed.TankBattle.Model.GameData.GameMap;
 import group.Macsed.TankBattle.Model.GameData.GameObjectType;
@@ -60,8 +61,8 @@ public class GamePlayerTank extends GameTank{
 
 
 
-        GameObjectType collisionConsquence=GameMap.theInstance.CheckBoxObjectCollision((GameBoxColiderObject)this);
-        if(collisionConsquence==GameObjectType.enemyBullet){
+        CollisionMessage collisionConsquence=GameMap.theInstance.CheckBoxObjectCollision((GameBoxColiderObject)this);
+        if(collisionConsquence.whetherDamage){
             hP-=damage;
             if(hP<=0){
                 return -1;

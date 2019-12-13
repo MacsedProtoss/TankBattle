@@ -1,12 +1,11 @@
 package group.Macsed.TankBattle.Model.GameData;
 
 import group.Macsed.TankBattle.Model.GameData.Bullet.GameBullet;
+import group.Macsed.TankBattle.Model.GameData.Colider.CollisionMessage;
 import group.Macsed.TankBattle.Model.GameData.Tank.GamePlayerTank;
 import group.Macsed.TankBattle.Model.GameData.Tank.GameTank;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class GameMap {
 
@@ -23,6 +22,11 @@ public class GameMap {
 
     public List<GameBoxColiderObject> boxColiderObjectList=new LinkedList<GameBoxColiderObject>();  //first
     public List<GameNoColiderObject> noColiderList=new LinkedList<GameNoColiderObject>();  //third
+
+
+    public Set<GameBoxColiderObject> toBeDeleteObjectSet=new HashSet<GameBoxColiderObject>();
+
+
     public GamePlayerTank thePlayer; //second
 
 
@@ -37,24 +41,58 @@ public class GameMap {
     //矩形碰撞盒检测
     private static boolean CheckTwoBoxColider(GameBoxColiderObject colider1,GameBoxColiderObject colider2){
         return (Math.abs(colider1.positionX-colider2.positionX)<(colider1.coliderWidth+colider2.coliderWidth)/2)&&
-        (Math.abs(colider1.positionY-colider2.positionY)<(colider1.coliderHeight+colider2.coliderHeight)/2);
+                (Math.abs(colider1.positionY-colider2.positionY)<(colider1.coliderHeight+colider2.coliderHeight)/2);
     }
 
 
-    public GameObjectType CheckBoxObjectCollision(GameBoxColiderObject theCheckedObject){
+    public CollisionMessage CheckBoxObjectCollision(GameBoxColiderObject theCheckedObject){
         //GameObject theObject=theCheckedObject;
 
-        GameObjectType theCollisonObjType;
+        CollisionMessage theCollisonConsquence=new CollisionMessage();
 
 
         for (GameBoxColiderObject forColiderObject : boxColiderObjectList) {
             if(forColiderObject!=theCheckedObject){//排除对自身的检测
                 if(CheckTwoBoxColider(theCheckedObject,forColiderObject)){
-                    theCollisonObjType=forColiderObject.getType();
-                    if(theCollisonObjType==GameObjectType.enemyBullet||theCollisonObjType==GameObjectType.playerBullet){
-//                        boxColiderObjectList.remove(forColiderObject);
+                    if(theCheckedObject.ObjectType==GameObjectType.stonebarrier){
+                        if(forColiderObject.ObjectType==GameObjectType.enemyBullet||forColiderObject.ObjectType==GameObjectType.playerBullet){
+                            toBeDeleteObjectSet.add(forColiderObject);
+                        }
                     }
-                    return theCollisonObjType;
+                    else if(theCheckedObject.ObjectType==GameObjectType.brickbarrier){
+                        if(forColiderObject.ObjectType==GameObjectType.enemyBullet||forColiderObject.ObjectType==GameObjectType.playerBullet){
+                            toBeDeleteObjectSet.add(forColiderObject);
+                            toBeDeleteObjectSet.add(theCheckedObject);
+                        }
+                    }
+                    else if(theCheckedObject.ObjectType==GameObjectType.enemytank){
+                        if(forColiderObject.ObjectType==GameObjectType.enemyBullet||forColiderObject.ObjectType==GameObjectType.playerBullet){
+                            toBeDeleteObjectSet.add(forColiderObject);
+                            if(forColiderObject.ObjectType==GameObjectType.playerBullet){
+
+                                theCollisonConsquence.whetherDamage=true;
+                            }
+                        }
+                        else{
+                            theCollisonConsquence.whetherMove=false;
+                        }
+                    }
+                    else if(theCheckedObject.ObjectType==GameObjectType.player){
+                        if(forColiderObject.ObjectType==GameObjectType.enemyBullet||forColiderObject.ObjectType==GameObjectType.playerBullet){
+                            toBeDeleteObjectSet.add(forColiderObject);
+                            if(forColiderObject.ObjectType==GameObjectType.enemyBullet){
+
+                                theCollisonConsquence.whetherDamage=true;
+                            }
+                        }
+                        else{
+                            theCollisonConsquence.whetherMove=false;
+                        }
+                    }
+
+
+
+
                 }
 
             }
@@ -64,13 +102,13 @@ public class GameMap {
 
         if(theCheckedObject!=theboxplayer){
             if(CheckTwoBoxColider(theCheckedObject,theboxplayer)){
-                return theboxplayer.getType();
+                theCollisonConsquence.whetherMove=false;
             }
         }
-        
 
-        
-        return GameObjectType.NULL;
+
+
+        return theCollisonConsquence;
     }
 
 }

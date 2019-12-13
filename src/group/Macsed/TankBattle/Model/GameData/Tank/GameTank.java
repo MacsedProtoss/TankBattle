@@ -1,7 +1,9 @@
 package group.Macsed.TankBattle.Model.GameData.Tank;
 
+import group.Macsed.TankBattle.Foundation.Graphics.GraphicCommonValues;
 import group.Macsed.TankBattle.Model.GameData.*;
 import group.Macsed.TankBattle.Model.GameData.Bullet.GameBullet;
+import group.Macsed.TankBattle.Model.GameData.Colider.CollisionMessage;
 
 public class GameTank extends GameBoxColiderObject {
     protected float moveSpeed=0f;
@@ -11,7 +13,7 @@ public class GameTank extends GameBoxColiderObject {
 
 
 
-    private static float tankWidth=64,tankHeight=64;
+    private static float tankWidth=64*2,tankHeight=64*2;
     public GameTank(){
         coliderWidth=tankWidth;
         coliderHeight=tankHeight;
@@ -20,32 +22,41 @@ public class GameTank extends GameBoxColiderObject {
     }
 
 
+
     protected void TankMove(float direction){
-        this.direction = direction;
-        float newPosX,newPosY;
-        newPosX=positionX;
-        newPosY=positionY;
+        this.direction=direction;
+        //float newPosX,newPosY;
+        float oldPosX,oldPosY;
+        oldPosX=positionX;
+        oldPosY=positionY;
+
         if(direction==0f){
-            newPosX+=moveSpeed;
+            positionX+=moveSpeed;
         }
         else if(direction== 90f){
-            newPosY+=moveSpeed;
+            positionY+=moveSpeed;
         }
         else if(direction==180f){
-            newPosX-=moveSpeed;
+            positionX-=moveSpeed;
 
         }
         else if(direction==270f){
-            newPosY-=moveSpeed;
+            positionY-=moveSpeed;
         }
 
 
 
-        if(Math.abs(positionX)>moveRangeX||Math.abs(positionY)>moveRangeY){
+        if(Math.abs(positionX)+coliderWidth/2>= GraphicCommonValues.shared.ScreenWidth() ||Math.abs(positionY)+coliderHeight/2>GraphicCommonValues.shared.ScreenHeight()){
+            positionX=oldPosX;
+            positionY=oldPosY;
             return;
         }
 
 
+        //positionX=newPosX;
+        //positionY=newPosY;
+
+/*
         GameObjectType collisionConsquence=GameMap.theInstance.CheckBoxObjectCollision((GameBoxColiderObject)this);
         if((collisionConsquence!=GameObjectType.player)&&(collisionConsquence!=GameObjectType.enemytank)
                 &&(collisionConsquence!=GameObjectType.brickbarrier)&&(collisionConsquence!=GameObjectType.stonebarrier)){
@@ -53,7 +64,12 @@ public class GameTank extends GameBoxColiderObject {
             positionY=newPosY;
             return ;
         }
-
+*/
+        CollisionMessage collisionConsquence=GameMap.theInstance.CheckBoxObjectCollision((GameBoxColiderObject)this);
+        if(!collisionConsquence.whetherMove){
+            positionX=oldPosX;
+            positionY=oldPosY;
+        }
     }
 
     protected void ShootBullet(){

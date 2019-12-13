@@ -31,7 +31,7 @@ public class GameDataManager {
         }
 
         for(int i=0;i<3;i++){
-            new GameEnemyTank((i-1)*GraphicCommonValues.shared.CommonObjSize()*5,-100,0,GraphicCommonValues.shared.moveSpeed()*GraphicCommonValues.shared.ScreenWidth(),GraphicCommonValues.shared.enermyHelath(),GraphicCommonValues.shared.enermyDamage());
+            new GameEnemyTank((i-1)*GraphicCommonValues.shared.CommonObjSize()*5,-300,0,GraphicCommonValues.shared.moveSpeed()*GraphicCommonValues.shared.ScreenWidth(),GraphicCommonValues.shared.enermyHelath(),GraphicCommonValues.shared.enermyDamage());
         }
 
 
@@ -60,6 +60,14 @@ public class GameDataManager {
         if(GameMap.theInstance.EnemyNum<=0)updateConsequence=1;
 
         updateConsequence=GameMap.theInstance.thePlayer.Update(thekey);
+
+        GameMap.theInstance.toBeDeleteObjectSet.clear();
+
+        for (GameBoxColiderObject theDeleteObject: GameMap.theInstance.toBeDeleteObjectSet) {
+            GameMap.theInstance.boxColiderObjectList.remove(theDeleteObject);
+        }
+
+
 
         return updateConsequence;
     }

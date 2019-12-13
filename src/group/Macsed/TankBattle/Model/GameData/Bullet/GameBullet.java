@@ -9,7 +9,7 @@ import group.Macsed.TankBattle.Model.GameData.GameObjectType;
 public class GameBullet extends GameBoxColiderObject {
     //private float damage=5;
     private static float bulletWidth=4,bulletHeight=4;
-    private static float bulletSpeed=1.2f/ GraphicCommonValues.shared.ScreenWidth();
+    private static float bulletSpeed=0.8f;// GraphicCommonValues.shared.ScreenWidth();
 
 
     public GameBullet(float positonX,float positionY,float direction,GameObjectType bulletType){
@@ -26,7 +26,7 @@ public class GameBullet extends GameBoxColiderObject {
         this.coliderHeight=bulletHeight;
         whetherRigid=false;
 
-//        GameMap.theInstance.boxColiderObjectList.add(this);
+        GameMap.theInstance.boxColiderObjectList.add(this);
 
     }
 
@@ -55,10 +55,9 @@ public class GameBullet extends GameBoxColiderObject {
         positionX=newPosX;
         positionY=newPosY;
 
-        if(Math.abs(positionX)>moveRangeX||Math.abs(positionY)>moveRangeY){
-            GameMap.theInstance.boxColiderObjectList.remove(this);
+        if(Math.abs(positionX)+coliderWidth/2>= GraphicCommonValues.shared.ScreenWidth() ||Math.abs(positionY)+coliderHeight/2>GraphicCommonValues.shared.ScreenHeight()){
+            GameMap.theInstance.toBeDeleteObjectSet.add(this);
         }
-
 
     }
 
