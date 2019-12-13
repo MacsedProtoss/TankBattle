@@ -9,6 +9,7 @@ import java.nio.IntBuffer;
 import java.util.Random;
 
 import static org.lwjgl.system.MemoryStack.stackPush;
+import static org.lwjgl.system.MemoryUtil.*;
 
 public class RenderUnit {
 
@@ -60,7 +61,7 @@ public class RenderUnit {
             GraphicBaseDrawer.shared.setTexturePath(data.path);
             GraphicBaseDrawer.shared.draw();
 
-
+            System.gc();
 
         }
 

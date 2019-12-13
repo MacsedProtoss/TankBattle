@@ -1,5 +1,6 @@
 package group.Macsed.TankBattle.Foundation.Graphics.Window.base;
 
+import group.Macsed.TankBattle.Foundation.Graphics.GraphicCommonValues;
 import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.RenderUnitManager;
 import group.Macsed.TankBattle.Foundation.Graphics.Window.GraphicResourcesManager;
 import group.Macsed.TankBattle.Foundation.Keyboard.KeyBoardEventManager;
@@ -19,8 +20,6 @@ import static org.lwjgl.system.MemoryUtil.*;
 public class GraphicWindowController {
 
     private long window;
-    private final int WIDTH = 800;
-    private final int HEIGHT = 600;
     private GraphicResourcesManager resourcesManager;
 
     public GraphicResourcesManager getResourcesManager() {
@@ -65,7 +64,7 @@ public class GraphicWindowController {
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // the window will be resizable
 
         // Create the window
-        window = glfwCreateWindow(WIDTH, HEIGHT, "Learn GLFW!", NULL, NULL);
+        window = glfwCreateWindow(GraphicCommonValues.shared.ScreenWidth(), GraphicCommonValues.shared.ScreenHeight(), "Learn GLFW!", NULL, NULL);
         if ( window == NULL )
             throw new RuntimeException("Failed to create the GLFW window");
 
@@ -175,7 +174,9 @@ public class GraphicWindowController {
     //TODO: this is a draw test & should be removed once test passed
 
     private  void testInit(){
-        RenderUnitManager.shared.addUnitToList("player","/Volumes/DATA/1.png",400f,300f,0f,0f);
+        RenderUnitManager.shared.addUnitToList("obj","/Volumes/DATA/3.png",480f,300f,0f,0f);
+        RenderUnitManager.shared.addUnitToList("player","/Volumes/DATA/1.png",1280f,720f,0f,0f);
+
     }
 
     private void test(){

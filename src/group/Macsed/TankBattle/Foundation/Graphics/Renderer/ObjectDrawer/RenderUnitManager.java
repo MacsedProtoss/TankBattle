@@ -21,9 +21,22 @@ public class RenderUnitManager {
     public void renderAll(){
         for (RenderUnit unit:units
         ) {
-            unit.render();
+
+            if (unit.unitTag == "map"){
+                unit.render();
+            }
 
         }
+
+        for (RenderUnit unit:units
+        ) {
+
+            if (unit.unitTag != "map"){
+                unit.render();
+            }
+
+        }
+
     }
 
     public void renderOne(String tag){

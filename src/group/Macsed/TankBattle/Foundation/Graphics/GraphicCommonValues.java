@@ -45,10 +45,10 @@ public class GraphicCommonValues {
     }
 
     public int ScreenWidth(){
-        return 800;
+        return 1920;
     }
 
     public int ScreenHeight(){
-        return 600;
+        return 1080;
     }
 }

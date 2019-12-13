@@ -22,6 +22,10 @@ public class GraphicShaderProgram {
             throw new RuntimeException(glGetProgramInfoLog(program));
         }
 
+        glDeleteShader(vertexShader);
+        glDeleteShader(fragmentShader);
+
+
         return program;
     }
 

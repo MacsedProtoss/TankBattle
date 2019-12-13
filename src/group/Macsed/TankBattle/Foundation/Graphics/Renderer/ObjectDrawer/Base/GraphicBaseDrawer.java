@@ -51,70 +51,64 @@ public class GraphicBaseDrawer {
         this.indices = indices;
     }
 
-    private void init(){
+    private void init() {
 
-        
         this.vao = GraphicVAOGenerator.shared.generateVao();
         this.vbo = GraphicVBOGenerator.shared.generateVBO();
         this.ebo = GraphicEBOGenerator.shared.generateEBO();
-        
 
         this.vertexShader = GraphicVertexShader.shared.createShader(GraphicCommonValues.shared.vertexShaderWithTexture());
         this.fragmentShader = GraphicFragmentShader.shared.createFragmentShader(GraphicCommonValues.shared.fragmentShaderWithTexture());
-        this.program = GraphicShaderProgram.shared.createProgram(vertexShader,fragmentShader);
-        
+        this.program = GraphicShaderProgram.shared.createProgram(vertexShader, fragmentShader);
+
 
         TextureDataManager.shared.init();
         this.texture = TextureDataManager.shared.getTexture(texturePath);
     }
 
-    public void bindObjects(){
+    public void bindObjects() {
 
         GraphicVAOBinder.shared.bindVao(vao);
-        GraphicVBOBinder.shared.bindVBO(vbo,vertices);
-        GraphicEBOBinder.shared.bindEBO(ebo,indices);
+        GraphicVBOBinder.shared.bindVBO(vbo, vertices);
+        GraphicEBOBinder.shared.bindEBO(ebo, indices);
 
         GraphicPositionAttrib.shared.attribPosition(program);
         GraphicTextureAttrib.shared.attribLocation(program);
 
+
+
+
         GraphicVAOBinder.shared.unbindVAO();
     }
 
-    public void draw(){
+    public void draw() {
 
         init();
         bindObjects();
 
         glUseProgram(program);
-        
-
-
-
 
 
         glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D,texture );
+        glBindTexture(GL_TEXTURE_2D, texture);
         glUniform1i(glGetUniformLocation(program, "ourTexture1"), 0);
-        
-
 
 
         glBindVertexArray(vao);
-        
+
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-        
+
         glBindVertexArray(0);
-        
 
-
-
+        delete();
 
     }
 
-    public void delete(){
+    public void delete() {
         glDeleteVertexArrays(vao);
         glDeleteBuffers(vbo);
         glDeleteBuffers(ebo);
+        glDeleteProgram(program);
     }
 
 }

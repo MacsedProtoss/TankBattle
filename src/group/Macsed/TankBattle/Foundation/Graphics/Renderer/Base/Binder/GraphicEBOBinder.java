@@ -8,8 +8,13 @@ public class GraphicEBOBinder {
 
     public static GraphicEBOBinder shared = new GraphicEBOBinder();
 
+    private boolean inited = false;
+
     public void bindEBO(int ebo,IntBuffer indices){
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ebo);
+
+
+//        glBufferSubData(GL_ELEMENT_ARRAY_BUFFER,0,indices);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER,indices,GL_STATIC_DRAW);
     }
 

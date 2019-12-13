@@ -8,9 +8,14 @@ public class GraphicVBOBinder {
 
     public static GraphicVBOBinder shared = new GraphicVBOBinder();
 
+
+
     public void bindVBO(int vbo, FloatBuffer vertices){
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
+//        glBufferSubData(GL_ARRAY_BUFFER,0,vertices);
+
         glBufferData(GL_ARRAY_BUFFER, vertices, GL_STATIC_DRAW);
+
     }
 
     public void unBindVBO(){
