@@ -1,5 +1,6 @@
 package group.Macsed.TankBattle.Foundation.Graphics.Window.base;
 
+import group.Macsed.TankBattle.Foundation.Graphics.Data.RenderObjectManager;
 import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.Base.GraphicBaseDrawer;
 import group.Macsed.TankBattle.Foundation.Graphics.Window.GraphicResourcesManager;
 import org.lwjgl.glfw.*;
@@ -127,6 +128,7 @@ public class GraphicWindowController {
         // Set the clear color
         glClearColor(0.2f, 0.3f, 0.3f, 0.0f);
 
+        testInit();
         // Run the rendering loop until the user has attempted to close
         // the window or has pressed the ESCAPE key.
         while ( !glfwWindowShouldClose(window) ) {
@@ -153,45 +155,14 @@ public class GraphicWindowController {
     }
 
     //TODO: this is a draw test & should be removed once test passed
+
+    private  void testInit(){
+        RenderObjectManager.shared.addUnitToList("test","/Volumes/DATA/1.png",0.5f,0.5f,0f,0f);
+    }
+
     private void test(){
 
-
-
-        try (MemoryStack stack = stackPush() ) {
-
-            FloatBuffer vertices;
-            IntBuffer indices;
-
-            Random random = new Random();
-            float i = random.nextFloat()/5.0f;
-
-            vertices = stack.mallocFloat(4 * 5);
-            vertices.put(0.5f+i).put(0.5f+i).put(0f).put(1.0f).put(1.0f);
-            vertices.put(0.5f+i).put(-0.5f+i).put(0f).put(1.0f).put(0.0f);
-            vertices.put(-0.5f+i).put(-0.5f+i).put(0f).put(0.0f).put(0.0f);
-            vertices.put(-0.5f+i).put(0.5f+i).put(0f).put(0.0f).put(1.0f);
-            vertices.flip();
-
-            indices = stack.mallocInt(2 * 3);
-            indices.put(0).put(1).put(3);
-            indices.put(1).put(2).put(3);
-            indices.flip();
-
-
-            String path = "/Volumes/DATA/1.png";
-
-            GraphicBaseDrawer.shared.setIndices(indices);
-            GraphicBaseDrawer.shared.setVertices(vertices);
-            GraphicBaseDrawer.shared.setTexturePath(path);
-            GraphicBaseDrawer.shared.draw();
-
-            
-
-        }
-
-//        memReport();
-
-
+        RenderObjectManager.shared.renderAll();
 
     }
 

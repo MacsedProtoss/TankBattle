@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b197630d-cd66-4b5a-a6ef-b206bcb030b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicCommonValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicCommonValues.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicEBOBinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicEBOBinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicTextureBinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicTextureBinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicVAOBinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicVAOBinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicVBOBinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Binder/GraphicVBOBinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicEBOGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicEBOGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicTextureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicTextureGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicVAOGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicVAOGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicVBOGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Generator/GraphicVBOGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Program/GraphicShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Program/GraphicShaderProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Shader/GraphicFragmentShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Shader/GraphicFragmentShader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Shader/GraphicVertexShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/Base/Shader/GraphicVertexShader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Utils/GraphicImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Utils/GraphicImageUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Data/RenderUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Data/RenderObjectDataManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/base/GraphicWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/base/GraphicWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
