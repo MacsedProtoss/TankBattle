@@ -1,5 +1,6 @@
 package group.Macsed.TankBattle.Foundation.Graphics.Data;
 
+import group.Macsed.TankBattle.Foundation.Graphics.GraphicCommonValues;
 import group.Macsed.TankBattle.Foundation.Graphics.Renderer.Base.Binder.GraphicTextureBinder;
 import group.Macsed.TankBattle.Foundation.Graphics.Renderer.Base.Generator.GraphicTextureGenerator;
 
@@ -10,8 +11,18 @@ public class TextureDataManager {
     private Map<String,Integer> textures = new HashMap<>();
 
     private final List<String> paths = new LinkedList<>(){{
-        add("/Volumes/DATA/3.png");
-        add("/Volumes/DATA/1.png");
+
+        System.out.println(GraphicCommonValues.shared.classpath()+"resources/tree.jpg");
+
+        add(GraphicCommonValues.shared.classpath()+"resources/brick.jpg");
+        add(GraphicCommonValues.shared.classpath()+"resources/bullet.jpg");
+        add(GraphicCommonValues.shared.classpath()+"resources/enemyTank.jpg");
+        add(GraphicCommonValues.shared.classpath()+"resources/playerTank.jpg");
+        add(GraphicCommonValues.shared.classpath()+"resources/stone.jpg");
+        add(GraphicCommonValues.shared.classpath()+"resources/tree.jpg");
+
+
+
     }};
 
     public static TextureDataManager shared = new TextureDataManager();

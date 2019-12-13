@@ -1,5 +1,7 @@
 package group.Macsed.TankBattle.Foundation.Graphics;
 
+import group.Macsed.TankBattle.Main;
+
 public class GraphicCommonValues {
 
     public static GraphicCommonValues shared = new GraphicCommonValues();
@@ -41,14 +43,47 @@ public class GraphicCommonValues {
     }
 
     public float moveSpeed(){
-        return 0.001f;
+        return 0.0025f;
     }
 
     public int ScreenWidth(){
-        return 1920;
+        return 1280;
     }
 
     public int ScreenHeight(){
-        return 1080;
+        return 720;
     }
+
+    public int BulletSize(){
+        return 4;
+    }
+
+    public int CommonObjSize(){
+        return 64;
+    }
+
+    public int enermyDamage(){
+        return 10;
+    }
+
+    public int playerDamage(){
+        return 10;
+    }
+
+    public int enermyHelath(){
+        return 70;
+    }
+
+    public int playerHealth(){
+        return 200;
+    }
+
+    public String classpath(){
+//        return Main.class.getResource("").toString();
+        return "/Volumes/MacData/codes/JavaProjects/TankBattle/src/group/Macsed/TankBattle/";
+    }
+
+
+
+
 }

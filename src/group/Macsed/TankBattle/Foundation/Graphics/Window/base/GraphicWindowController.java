@@ -51,6 +51,8 @@ public class GraphicWindowController {
         // will print the error message in System.err.
 //        Configuration.DEBUG_MEMORY_ALLOCATOR.set(true);
 
+        glfwInit();
+
         GLFWErrorCallback.createPrint(System.err).set();
 
         // Initialize GLFW. Most GLFW functions will not work before doing this.
@@ -64,18 +66,13 @@ public class GraphicWindowController {
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // the window will be resizable
 
         // Create the window
-        window = glfwCreateWindow(GraphicCommonValues.shared.ScreenWidth(), GraphicCommonValues.shared.ScreenHeight(), "Learn GLFW!", NULL, NULL);
+        window = glfwCreateWindow(GraphicCommonValues.shared.ScreenWidth(), GraphicCommonValues.shared.ScreenHeight(), "OpenGL Windows", NULL, NULL);
         if ( window == NULL )
             throw new RuntimeException("Failed to create the GLFW window");
 
         // Setup a key callback. It will be called every time a key is pressed, repeated or released.
-        glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {
-            if ( key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE ) {
-                glfwSetWindowShouldClose(window, true); // We will detect this in the rendering loop
-            }
 
-        });
-
+        setKeyCallBack();
 
 
         // Get the thread stack and push a new frame
@@ -105,26 +102,7 @@ public class GraphicWindowController {
         // Make the window visible
         glfwShowWindow(window);
 
-        glfwSetKeyCallback(window, new GLFWKeyCallback() {
-            @Override
-            public void invoke(long window, int key, int scancode, int action, int mods) {
-                if (key == GLFW_KEY_W){
-                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.w);
-                }
 
-                if (key == GLFW_KEY_A){
-                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.a);
-                }
-
-                if (key == GLFW_KEY_S){
-                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.s);
-                }
-
-                if (key == GLFW_KEY_D){
-                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.d);
-                }
-            }
-        });
 
 
     }
@@ -148,7 +126,7 @@ public class GraphicWindowController {
         while ( !glfwWindowShouldClose(window) ) {
 
 
-            glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+            glClearColor(0f, 0f, 0f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
 
 
@@ -176,6 +154,29 @@ public class GraphicWindowController {
         RenderUnitManager.shared.renderAll();
     }
 
+    protected void setKeyCallBack(){
+        glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {
+            if ( key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE ) {
+                glfwSetWindowShouldClose(window, true); // We will detect this in the rendering loop
+            }
+            if (key == GLFW_KEY_W){
+                KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.w);
+            }
+
+            if (key == GLFW_KEY_A){
+                KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.a);
+            }
+
+            if (key == GLFW_KEY_S){
+                KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.s);
+            }
+
+            if (key == GLFW_KEY_D){
+                KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.d);
+            }
+
+        });
+    }
 
 
 }

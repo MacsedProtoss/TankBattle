@@ -51,32 +51,8 @@ public class RenderDataUnit {
                 Yposition += GraphicCommonValues.shared.moveSpeed();
                 height = actualH / GraphicCommonValues.shared.ScreenHeight();
                 width = actualW / GraphicCommonValues.shared.ScreenWidth();
-                anchors[0] = 1f;
-                anchors[1] = 1f;
-                anchors[2] = 1f;
-                anchors[3] = 0f;
-                anchors[4] = 0f;
-                anchors[5] = 0f;
-                anchors[6] = 0f;
-                anchors[7] = 1f;
-                break;
-            case down:
-                Yposition -= GraphicCommonValues.shared.moveSpeed();
-                height = actualH / GraphicCommonValues.shared.ScreenHeight();
-                width = actualW / GraphicCommonValues.shared.ScreenWidth();
-                anchors[0] = 1f;
-                anchors[1] = 0f;
-                anchors[2] = 1f;
-                anchors[3] = 1f;
-                anchors[4] = 0f;
-                anchors[5] = 1f;
-                anchors[6] = 0f;
-                anchors[7] = 0f;
-                break;
-            case left:
-                Xposition -= GraphicCommonValues.shared.moveSpeed();
-                height = actualW / GraphicCommonValues.shared.ScreenHeight();
-                width = actualH / GraphicCommonValues.shared.ScreenWidth();
+
+
                 anchors[0] = 1f;
                 anchors[1] = 0f;
                 anchors[2] = 0f;
@@ -86,10 +62,11 @@ public class RenderDataUnit {
                 anchors[6] = 1f;
                 anchors[7] = 1f;
                 break;
-            case right:
-                Xposition += GraphicCommonValues.shared.moveSpeed();
-                height = actualW / GraphicCommonValues.shared.ScreenHeight();
-                width = actualH / GraphicCommonValues.shared.ScreenWidth();
+            case down:
+                Yposition -= GraphicCommonValues.shared.moveSpeed();
+                height = actualH / GraphicCommonValues.shared.ScreenHeight();
+                width = actualW / GraphicCommonValues.shared.ScreenWidth();
+
                 anchors[0] = 0f;
                 anchors[1] = 1f;
                 anchors[2] = 1f;
@@ -98,6 +75,43 @@ public class RenderDataUnit {
                 anchors[5] = 0f;
                 anchors[6] = 0f;
                 anchors[7] = 0f;
+
+
+
+                break;
+            case left:
+                Xposition -= GraphicCommonValues.shared.moveSpeed();
+                height = actualW / GraphicCommonValues.shared.ScreenHeight();
+                width = actualH / GraphicCommonValues.shared.ScreenWidth();
+
+
+                anchors[0] = 0f;
+                anchors[1] = 0f;
+                anchors[2] = 0f;
+                anchors[3] = 1f;
+                anchors[4] = 1f;
+                anchors[5] = 1f;
+                anchors[6] = 1f;
+                anchors[7] = 0f;
+
+
+
+                break;
+            case right:
+                Xposition += GraphicCommonValues.shared.moveSpeed();
+                height = actualW / GraphicCommonValues.shared.ScreenHeight();
+                width = actualH / GraphicCommonValues.shared.ScreenWidth();
+
+                anchors[0] = 1f;
+                anchors[1] = 0f;
+                anchors[2] = 1f;
+                anchors[3] = 1f;
+                anchors[4] = 0f;
+                anchors[5] = 1f;
+                anchors[6] = 0f;
+                anchors[7] = 0f;
+
+
                 break;
         }
 
