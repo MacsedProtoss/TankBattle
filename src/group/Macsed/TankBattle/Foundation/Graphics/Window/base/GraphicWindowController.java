@@ -19,8 +19,8 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class GraphicWindowController {
 
-    private long window;
-    private GraphicResourcesManager resourcesManager;
+    protected long window;
+    protected GraphicResourcesManager resourcesManager;
 
     public GraphicResourcesManager getResourcesManager() {
         return resourcesManager;
@@ -46,7 +46,7 @@ public class GraphicWindowController {
 
     }
 
-    private void init() {
+    protected void init() {
         // Setup an error callback. The default implementation
         // will print the error message in System.err.
 //        Configuration.DEBUG_MEMORY_ALLOCATOR.set(true);
@@ -130,7 +130,7 @@ public class GraphicWindowController {
     }
 
 
-    private void loop() {
+    protected void loop() {
         // This line is critical for LWJGL's interoperation with GLFW's
         // OpenGL context, or any context that is managed externally.
         // LWJGL detects the context that is current in the current thread,
@@ -142,7 +142,7 @@ public class GraphicWindowController {
         // Set the clear color
         glClearColor(0.2f, 0.3f, 0.3f, 0.0f);
 
-        testInit();
+
         // Run the rendering loop until the user has attempted to close
         // the window or has pressed the ESCAPE key.
         while ( !glfwWindowShouldClose(window) ) {
@@ -153,8 +153,8 @@ public class GraphicWindowController {
 
 
 
+            updateAndDraw();
 
-            test();
 
 
             glfwPollEvents();
@@ -172,18 +172,10 @@ public class GraphicWindowController {
     }
 
     //TODO: this is a draw test & should be removed once test passed
-
-    private  void testInit(){
-        RenderUnitManager.shared.addUnitToList("obj","/Volumes/DATA/3.png",480f,300f,0f,0f);
-        RenderUnitManager.shared.addUnitToList("player","/Volumes/DATA/1.png",1280f,720f,0f,0f);
-
-    }
-
-    private void test(){
-
+    protected void updateAndDraw(){
         RenderUnitManager.shared.renderAll();
-
     }
+
 
 
 }

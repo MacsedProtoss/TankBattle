@@ -13,11 +13,25 @@ public class RenderUnitManager {
     private List<RenderUnit> units = new LinkedList<>();
 
     public void addUnitToList(String tag,String texturePath,float width,float height,float x,float y,RenderUnitType type){
-        RenderUnit unit = new RenderUnit();
-        unit.setData(new RenderDataUnit(texturePath,x,y,width,height));
-        unit.unitTag = tag;
-        unit.type = type;
-        units.add(unit);
+
+        if (type == RenderUnitType.tank){
+            GraphicTankUnit unit = new GraphicTankUnit();
+            unit.setData(new RenderDataUnit(texturePath,x,y,width,height));
+            unit.unitTag = tag;
+            unit.type = type;
+            units.add(unit);
+        }else{
+            RenderUnit unit = new RenderUnit();
+            unit.setData(new RenderDataUnit(texturePath,x,y,width,height));
+            unit.unitTag = tag;
+            unit.type = type;
+            units.add(unit);
+        }
+
+    }
+
+    public void clearList(){
+        units = new LinkedList<>();
     }
 
     public void renderAll(){
