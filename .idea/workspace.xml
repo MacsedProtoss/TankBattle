@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b197630d-cd66-4b5a-a6ef-b206bcb030b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Data/RenderUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Data/RenderObjectDataManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Data/RenderObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/ObjectDrawer/RenderUnitManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Data/RenderUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/ObjectDrawer/RenderUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Renderer/ObjectDrawer/TankDrawer/GraphicTankDrawer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/base/GraphicWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/base/GraphicWindowController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

@@ -1,21 +1,19 @@
-package group.Macsed.TankBattle.Foundation.Graphics.Data;
+package group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer;
+
+import group.Macsed.TankBattle.Foundation.Graphics.Data.RenderDataUnit;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class RenderObjectManager {
+public class RenderUnitManager {
 
-    public static RenderObjectManager shared = new RenderObjectManager();
+    public static RenderUnitManager shared = new RenderUnitManager();
 
     private List<RenderUnit> units = new LinkedList<>();
 
     public void addUnitToList(String tag,String texturePath,float width,float height,float x,float y){
         RenderUnit unit = new RenderUnit();
-        unit.setTexturePath(texturePath);
-        unit.setWidth(width);
-        unit.setHeight(height);
-        unit.setXposition(x);
-        unit.setYposition(y);
+        unit.setData(new RenderDataUnit(texturePath,x,y,width,height));
         unit.unitTag = tag;
         units.add(unit);
     }
@@ -40,6 +38,8 @@ public class RenderObjectManager {
 
         }
     }
+
+
 
 
 

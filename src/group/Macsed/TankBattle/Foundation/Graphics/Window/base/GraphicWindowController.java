@@ -1,14 +1,12 @@
 package group.Macsed.TankBattle.Foundation.Graphics.Window.base;
 
-import group.Macsed.TankBattle.Foundation.Graphics.Data.RenderObjectManager;
-import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.Base.GraphicBaseDrawer;
+import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.RenderUnitManager;
 import group.Macsed.TankBattle.Foundation.Graphics.Window.GraphicResourcesManager;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
 import org.lwjgl.system.*;
 
 import java.nio.*;
-import java.util.Random;
 
 import static org.lwjgl.glfw.Callbacks.*;
 import static org.lwjgl.glfw.GLFW.*;
@@ -157,12 +155,12 @@ public class GraphicWindowController {
     //TODO: this is a draw test & should be removed once test passed
 
     private  void testInit(){
-        RenderObjectManager.shared.addUnitToList("test","/Volumes/DATA/1.png",0.5f,0.5f,0f,0f);
+        RenderUnitManager.shared.addUnitToList("test","/Volumes/DATA/1.png",0.5f,0.5f,0f,0f);
     }
 
     private void test(){
 
-        RenderObjectManager.shared.renderAll();
+        RenderUnitManager.shared.renderAll();
 
     }
 
