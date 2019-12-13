@@ -3,21 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b197630d-cd66-4b5a-a6ef-b206bcb030b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Data/RenderDataUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Data/RenderDataUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Data/TextureDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Data/TextureDataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicCommonValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/GraphicCommonValues.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/GraphicGameViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/GraphicGameViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/base/GraphicWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Foundation/Graphics/Window/base/GraphicWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/Barrier/GameBarrier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/Barrier/GameBarrierType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/Bullet/GameBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/Bullet/GameBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/Bullet/GameBulletType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/GameDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/GameDataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/GameObjectType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/GameObjectType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/Tank/GameTank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/Tank/GameTank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/group/Macsed/TankBattle/Model/GameData/Tank/GameTankType.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +58,7 @@
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="group.Macsed.TankBattle.Main" />
       <module name="TankBattle" />
-      <option name="VM_PARAMETERS" value="-XstartOnFirstThread -XX:+PrintGC -verbose:gc -XX:NativeMemoryTracking=detail" />
+      <option name="VM_PARAMETERS" value="-XstartOnFirstThread -XX:+PrintGC -verbose:gc" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -105,7 +91,7 @@
       <workItem from="1576125438416" duration="8576000" />
       <workItem from="1576134477292" duration="245000" />
       <workItem from="1576134739173" duration="14513000" />
-      <workItem from="1576250433751" duration="5338000" />
+      <workItem from="1576250433751" duration="7076000" />
     </task>
     <servers />
   </component>

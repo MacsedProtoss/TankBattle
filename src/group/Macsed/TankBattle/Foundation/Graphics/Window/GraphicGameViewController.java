@@ -9,6 +9,9 @@ import group.Macsed.TankBattle.Foundation.Keyboard.KeyBoardEventManager;
 import group.Macsed.TankBattle.Foundation.Keyboard.KeyboardActiveKeys;
 import group.Macsed.TankBattle.Main;
 import group.Macsed.TankBattle.Model.GameData.GameDataManager;
+import group.Macsed.TankBattle.Model.GameData.GameMap;
+import group.Macsed.TankBattle.Model.GameData.GameObject;
+import group.Macsed.TankBattle.Model.GameData.GameObjectType;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_D;
@@ -19,9 +22,72 @@ public class GraphicGameViewController extends GraphicWindowController {
 
     public void initGameObj(){
         RenderUnitManager.shared.clearList();
-        RenderUnitManager.shared.addUnitToList("player",GraphicCommonValues.shared.classpath()+"resources/playerTank.jpg",64f,64f,0f,0f, RenderUnitType.tank);
         manager = new GameDataManager();
         manager.initGameSceneData();
+        refreshList();
+    }
+
+    private String getTexturePath(GameObjectType type){
+        switch (type){
+            case player:
+                return GraphicCommonValues.shared.classpath()+"resources/playerTank.jpg";
+            case enemyBullet:
+                return GraphicCommonValues.shared.classpath()+"resources/bullet.jpg";
+            case playerBullet:
+                return GraphicCommonValues.shared.classpath()+"resources/bullet.jpg";
+            case stonebarrier:
+                return GraphicCommonValues.shared.classpath()+"resources/stone.jpg";
+            case enemytank:
+                return GraphicCommonValues.shared.classpath()+"resources/enemyTank.jpg";
+            case treebarrier:
+                return GraphicCommonValues.shared.classpath()+"resources/tree.jpg";
+            case brickbarrier:
+                return GraphicCommonValues.shared.classpath()+"resources/brick.jpg";
+            default:
+                return "";
+        }
+    }
+
+    private RenderUnitType getTextureType(GameObjectType type){
+        switch (type){
+            case player:
+                return RenderUnitType.tank;
+            case enemyBullet:
+                return RenderUnitType.bullet;
+            case playerBullet:
+                return RenderUnitType.bullet;
+            case stonebarrier:
+                return RenderUnitType.barrier;
+            case enemytank:
+                return RenderUnitType.tank;
+            case treebarrier:
+                return RenderUnitType.barrier;
+            case brickbarrier:
+                return RenderUnitType.barrier;
+            default:
+                return null;
+        }
+    }
+
+    private void refreshList(){
+
+        for (GameObject obj: GameMap.theInstance.boxColiderObjectList
+        ) {
+
+            RenderUnitManager.shared.addUnitToList("normal",getTexturePath(obj.getType()),GraphicCommonValues.shared.CommonObjSize(),GraphicCommonValues.shared.CommonObjSize(),obj.getPositionX()/GraphicCommonValues.shared.ScreenWidth(),obj.getPositionY()/GraphicCommonValues.shared.ScreenHeight(),getTextureType(obj.getType()));
+
+        }
+
+        RenderUnitManager.shared.addUnitToList("player",getTexturePath(GameMap.theInstance.thePlayer.getType()),GraphicCommonValues.shared.CommonObjSize(),GraphicCommonValues.shared.CommonObjSize(),GameMap.theInstance.thePlayer.getPositionX()/GraphicCommonValues.shared.ScreenWidth(),GameMap.theInstance.thePlayer.getPositionY()/GraphicCommonValues.shared.ScreenHeight(),getTextureType(GameMap.theInstance.thePlayer.getType()));
+
+
+
+        for (GameObject obj: GameMap.theInstance.noColiderList
+        ) {
+
+            RenderUnitManager.shared.addUnitToList("mix",getTexturePath(obj.getType()),GraphicCommonValues.shared.CommonObjSize(),GraphicCommonValues.shared.CommonObjSize(),obj.getPositionX()/GraphicCommonValues.shared.ScreenWidth(),obj.getPositionY()/GraphicCommonValues.shared.ScreenHeight(),getTextureType(obj.getType()));
+
+        }
     }
 
     @Override
@@ -35,7 +101,8 @@ public class GraphicGameViewController extends GraphicWindowController {
     @Override
     protected void updateAndDraw() {
 
-        //TODO
+        RenderUnitManager.shared.clearList();
+        refreshList();
 
         super.updateAndDraw();
     }
@@ -47,22 +114,22 @@ public class GraphicGameViewController extends GraphicWindowController {
                     glfwSetWindowShouldClose(window, true); // We will detect this in the rendering loop
                 }
                 if (key == GLFW_KEY_W){
-                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.w);
+//                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.w);
                     manager.Update(KeyboardActiveKeys.w);
                 }
 
                 if (key == GLFW_KEY_A){
-                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.a);
+//                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.a);
                     manager.Update(KeyboardActiveKeys.a);
                 }
 
                 if (key == GLFW_KEY_S){
-                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.s);
+//                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.s);
                     manager.Update(KeyboardActiveKeys.s);
                 }
 
                 if (key == GLFW_KEY_D){
-                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.d);
+//                    KeyBoardEventManager.shared.handleKeyEvent(KeyboardActiveKeys.d);
                     manager.Update(KeyboardActiveKeys.d);
                 }
 

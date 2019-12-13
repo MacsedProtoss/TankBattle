@@ -13,7 +13,7 @@ public class GameEnemyTank extends GameTank{
 
     protected float directionChangeTimer=0f;
 
-    protected float directionChangePerT=3f;
+    protected float directionChangePerT=0.5f;
 
 
     public GameEnemyTank(float posX,float posY,float direction,float movespeed,float hp,float tdamaged){
