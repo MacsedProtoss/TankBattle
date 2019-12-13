@@ -1,6 +1,7 @@
-package group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer;
+package group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.Base;
 
 import group.Macsed.TankBattle.Foundation.Graphics.Data.RenderDataUnit;
+import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.Tank.GraphicTankUnit;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -11,10 +12,11 @@ public class RenderUnitManager {
 
     private List<RenderUnit> units = new LinkedList<>();
 
-    public void addUnitToList(String tag,String texturePath,float width,float height,float x,float y){
+    public void addUnitToList(String tag,String texturePath,float width,float height,float x,float y,RenderUnitType type){
         RenderUnit unit = new RenderUnit();
         unit.setData(new RenderDataUnit(texturePath,x,y,width,height));
         unit.unitTag = tag;
+        unit.type = type;
         units.add(unit);
     }
 
@@ -22,8 +24,12 @@ public class RenderUnitManager {
         for (RenderUnit unit:units
         ) {
 
-            if (unit.unitTag == "map"){
+            if (unit.type == RenderUnitType.map){
                 unit.render();
+            }
+
+            if (unit.shouldBeRecycled){
+                units.remove(unit);
             }
 
         }
@@ -31,7 +37,22 @@ public class RenderUnitManager {
         for (RenderUnit unit:units
         ) {
 
-            if (unit.unitTag != "map"){
+            if (unit.type == RenderUnitType.tank){
+                GraphicTankUnit tank = (GraphicTankUnit) unit;
+                if (tank.isExpoding){
+                    tank.renderExplode();
+                }else{
+                    tank.render();
+                }
+            }
+
+        }
+
+
+        for (RenderUnit unit:units
+             ) {
+
+            if (unit.type != RenderUnitType.map && unit.type != RenderUnitType.tank){
                 unit.render();
             }
 

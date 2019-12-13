@@ -1,8 +1,8 @@
 package group.Macsed.TankBattle.Foundation.Keyboard;
 
 import group.Macsed.TankBattle.Foundation.Graphics.Data.RenderDataMoveDirection;
-import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.RenderUnitManager;
-import group.Macsed.TankBattle.Model.GameData.GameDataManager;;
+import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.Base.RenderUnitManager;
+;
 
 
 public class KeyBoardEventManager {

@@ -1,4 +1,4 @@
-package group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer;
+package group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.Base;
 
 import group.Macsed.TankBattle.Foundation.Graphics.Data.RenderDataUnit;
 import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.Base.GraphicBaseDrawer;
@@ -14,9 +14,9 @@ import static org.lwjgl.system.MemoryUtil.*;
 public class RenderUnit {
 
     public String unitTag;
+    public RenderUnitType type;
+    public boolean shouldBeRecycled = false;
     private RenderDataUnit data;
-
-
 
     private boolean hasSub = false;
     private RenderDataUnit subData;
@@ -60,7 +60,6 @@ public class RenderUnit {
             GraphicBaseDrawer.shared.setVertices(vertices);
             GraphicBaseDrawer.shared.setTexturePath(data.path);
             GraphicBaseDrawer.shared.draw();
-
 
 
         }

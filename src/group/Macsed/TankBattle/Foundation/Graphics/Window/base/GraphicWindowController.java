@@ -1,7 +1,7 @@
 package group.Macsed.TankBattle.Foundation.Graphics.Window.base;
 
 import group.Macsed.TankBattle.Foundation.Graphics.GraphicCommonValues;
-import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.RenderUnitManager;
+import group.Macsed.TankBattle.Foundation.Graphics.Renderer.ObjectDrawer.Base.RenderUnitManager;
 import group.Macsed.TankBattle.Foundation.Graphics.Window.GraphicResourcesManager;
 import group.Macsed.TankBattle.Foundation.Keyboard.KeyBoardEventManager;
 import group.Macsed.TankBattle.Foundation.Keyboard.KeyboardActiveKeys;
